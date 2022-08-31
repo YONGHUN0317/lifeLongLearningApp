@@ -11,13 +11,14 @@
 
 
     >
+
     <ImageView
         android:id="@+id/toyfaces_ta"
         android:layout_width="214dp"
         android:layout_height="213dp"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="302dp"
+        android:layout_marginStart="302dp"
         android:layout_marginTop="13dp"
         app:srcCompat="@drawable/book"
         tools:ignore="ImageContrastCheck" />
@@ -27,9 +28,9 @@
         android:id="@+id/character2"
         android:layout_width="278dp"
         android:layout_height="438dp"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="255dp"
+        android:layout_marginStart="255dp"
         android:layout_marginTop="541dp"
         app:srcCompat="@drawable/character2" />
 
@@ -37,30 +38,30 @@
         android:id="@+id/character1"
         android:layout_width="497dp"
         android:layout_height="717dp"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="-91dp"
+        android:layout_marginStart="-91dp"
         android:layout_marginTop="378dp"
         app:srcCompat="@drawable/character1" />
 
     <ImageView
         android:id="@+id/rectangle_3"
         android:layout_width="526dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
+        android:layout_height="240dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="-6dp"
+        android:layout_marginStart="-6dp"
         android:layout_marginTop="890dp"
         app:srcCompat="@drawable/rectangle3" />
 
     <ImageView
         android:id="@+id/rectangle_1"
-        android:layout_width="260dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
+        android:layout_width="336dp"
+        android:layout_height="300dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="280dp"
-        android:layout_marginTop="787dp"
+        android:layout_marginStart="286dp"
+        android:layout_marginTop="766dp"
         app:srcCompat="@drawable/rectangle1" />
 
 
