@@ -9,7 +9,9 @@ import com.example.lifelonglearningapp.fragments.*
 
 class MainLectureAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle) :
     FragmentStateAdapter(fragmentManager, lifecycle) {
-    override fun getItemCount() = 14
+    override fun getItemCount(): Int{
+        return 14
+    }
 
     override fun createFragment(position: Int): Fragment {
         return when (position) {
@@ -54,7 +56,7 @@ class MainLectureAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle)
             }
             13 -> {
                 FragmentJeju()
-            }else -> {throw Resources.NotFoundException("Position Not Found")}
+            }else -> {Fragment()}
 
 
 
