@@ -24,26 +24,12 @@
 
 
         <TextView
-            android:id="@+id/title1"
-            android:layout_width="160dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="39dp"
-            android:fontFamily="@font/fontstyle"
-            android:gravity="top"
-            android:text="평생학습"
-            android:textColor="#000000"
-            android:textSize="28sp"
-            app:layout_constraintBottom_toTopOf="@+id/title2"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
             android:id="@+id/title2"
-            android:layout_width="300dp"
+            android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_marginStart="28dp"
-            android:layout_marginBottom="15dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
             android:fontFamily="@font/fontstyle"
             android:gravity="top"
             android:text="나의 삶을 풍요롭고"
@@ -53,11 +39,27 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/title3"
-            android:layout_width="300dp"
+            android:id="@+id/title1"
+            android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_marginStart="28dp"
-            android:layout_marginBottom="48dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/fontstyle"
+            android:gravity="top"
+            android:text="평생학습"
+            android:textColor="#000000"
+            android:textSize="28sp"
+            app:layout_constraintBottom_toTopOf="@+id/title2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.437" />
+
+        <TextView
+            android:id="@+id/title3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginBottom="12dp"
             android:fontFamily="@font/fontstyle"
             android:gravity="top"
             android:text="행복하게 하는 교육"
@@ -70,21 +72,11 @@
             android:id="@+id/search_image"
             android:layout_width="343dp"
             android:layout_height="58dp"
-            android:layout_marginBottom="32dp"
+            android:layout_marginBottom="72dp"
             android:background="@drawable/main_search"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
-
-        <ImageView
-            android:id="@+id/search_glass"
-            android:layout_width="31dp"
-            android:layout_height="28dp"
-            android:src="@drawable/magnifyingglass"
-            app:layout_constraintBottom_toBottomOf="@+id/search_image"
-            app:layout_constraintEnd_toStartOf="@+id/search_textview"
-            app:layout_constraintStart_toStartOf="@+id/search_image"
-            app:layout_constraintTop_toTopOf="@+id/search_image" />
 
         <TextView
             android:id="@+id/search_textview"
@@ -98,7 +90,33 @@
             app:layout_constraintHorizontal_bias="0.265"
             app:layout_constraintStart_toStartOf="@+id/search_image"
             app:layout_constraintTop_toTopOf="@+id/search_image"
-            app:layout_constraintVertical_bias="0.444" />
+            app:layout_constraintVertical_bias="0.37" />
+
+        <ImageView
+            android:id="@+id/search_glass"
+            android:layout_width="31dp"
+            android:layout_height="28dp"
+            android:src="@drawable/magnifyingglass"
+            app:layout_constraintBottom_toBottomOf="@+id/search_image"
+            app:layout_constraintEnd_toStartOf="@+id/search_textview"
+            app:layout_constraintStart_toStartOf="@+id/search_image"
+            app:layout_constraintTop_toTopOf="@+id/search_image" />
+
+        <TextView
+            android:id="@+id/word"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/fontstyle"
+            android:gravity="top"
+            android:text="추천 강좌"
+            android:textColor="@color/tablayout"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/search_image" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -114,6 +132,13 @@
         app:layout_constraintWidth_percent="1.0">
 
 
+        <include
+            layout="@layout/activity_tablayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

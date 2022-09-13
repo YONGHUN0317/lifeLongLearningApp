@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
 
         val adapter = MainLectureAdapter(supportFragmentManager, lifecycle)
         viewPager.adapter =adapter
-        TabLayoutMediator(tabLayout, viewPager){tab, position->
+        TabLayoutMediator(tabLayout, viewPager){ tab, position->
             when(position){
                 0 ->{
                     
