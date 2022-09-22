@@ -9,8 +9,11 @@ import android.os.Handler
 import android.os.Looper
 import android.util.Log
 import android.view.View
+import com.example.lifelonglearningapp.databinding.ActivityMainBinding
+import com.example.lifelonglearningapp.fragments.FragmentGyeonggi
+import com.example.lifelonglearningapp.fragments.FragmentSeoul
 import com.google.android.material.tabs.TabLayoutMediator
-import kotlinx.android.synthetic.main.activity_tablayout.*
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.Main
 import kotlinx.coroutines.delay
@@ -18,19 +21,26 @@ import kotlinx.coroutines.launch
 import kotlin.concurrent.timer
 
 class MainActivity : AppCompatActivity() {
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.LifelongLearningApp)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
         val adapter = MainLectureAdapter(supportFragmentManager, lifecycle)
         viewPager.adapter =adapter
-        TabLayoutMediator(tabLayout, viewPager){ tab, position->
+        TabLayoutMediator(tabLayout, viewPager){tab, position->
             when(position){
                 0 ->{
-                    
+                    FragmentSeoul()
                 }
-            }}
+                1 ->{
+                    FragmentGyeonggi()
+                }
+
+            }}.attach()
     }
 
 }

@@ -70,7 +70,7 @@
             android:id="@+id/search_image"
             android:layout_width="343dp"
             android:layout_height="58dp"
-            android:layout_marginBottom="72dp"
+            android:layout_marginBottom="40dp"
             android:background="@drawable/main_search"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -130,13 +130,113 @@
         app:layout_constraintWidth_percent="1.0">
 
 
-        <include
-            layout="@layout/activity_tablayout"
-            android:layout_width="wrap_content"
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:background="@color/background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tabIndicatorColor="@color/tablayout"
+            app:tabMode="scrollable"
+            app:tabSelectedTextColor="@color/tablayout"
+            app:tabTextColor="#9A9A9D">
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/seoul"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="서울" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/gyeonggi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="경기도" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/incheon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="인천" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/gangwon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="강원도" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/chungcheong"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="충청도" />
+
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/sejong"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="세종" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/daejeon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="대전" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/gyeongsang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="경상도" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/daegu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="대구" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/busan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="부산" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/ulsan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="울산" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/jeolla"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="전라도" />
+
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/gwanju"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="광주" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/jeju"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="제주도" />
+        </com.google.android.material.tabs.TabLayout>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager"
+            android:layout_width="391dp"
+            android:layout_height="474dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

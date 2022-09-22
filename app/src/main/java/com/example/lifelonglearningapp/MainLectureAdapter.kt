@@ -9,7 +9,7 @@ import com.example.lifelonglearningapp.fragments.*
 
 class MainLectureAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle) :
     FragmentStateAdapter(fragmentManager, lifecycle) {
-    override fun getItemCount(): Int{
+    override fun getItemCount(): Int {
         return 14
     }
 
@@ -56,8 +56,10 @@ class MainLectureAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle)
             }
             13 -> {
                 FragmentJeju()
-            }else -> {Fragment()}
-
+            }
+            else -> {
+                Fragment()
+            }
 
 
         }
