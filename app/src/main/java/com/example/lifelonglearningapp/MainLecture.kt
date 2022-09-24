@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentPagerAdapter
 import com.example.lifelonglearningapp.databinding.FragmentMainLectureBinding
 
 private const val ARG_PARAM1 = "param1"
@@ -42,7 +43,7 @@ class MainLecture : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        binding.textview.text = param1
+        binding.lectureTitle.text = param1
     }
 
     companion object {

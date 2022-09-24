@@ -24,7 +24,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="198dp"
+            android:layout_height="200dp"
             android:orientation="vertical"
             android:layout_marginStart="28dp"
             app:layout_constraintBottom_toTopOf="@+id/search_image"
@@ -132,8 +132,9 @@
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="340dp"
+            android:layout_height="45dp"
+            app:tabMode="scrollable"
             android:layout_marginStart="28dp"
             android:background="@color/background"
             app:layout_constraintStart_toStartOf="parent"
@@ -141,7 +142,9 @@
             app:tabIndicatorColor="@color/tablayout"
             app:tabRippleColor="@color/tablayout"
             app:tabSelectedTextColor="@color/tablayout"
-            app:tabTextColor="#9A9A9D">
+            app:tabTextColor="#9A9A9D"
+            tools:ignore="SpeakableTextPresentCheck"
+            >
 
 
         </com.google.android.material.tabs.TabLayout>
@@ -150,6 +153,7 @@
             android:id="@+id/viewPager"
             android:layout_width="match_parent"
             android:layout_height="474dp"
+            android:layout_marginTop="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tabLayout" />

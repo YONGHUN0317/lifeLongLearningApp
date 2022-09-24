@@ -4,10 +4,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.FragmentActivity
 import com.example.lifelonglearningapp.databinding.ActivityMainBinding
+import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.activity_main.*
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var  binding: ActivityMainBinding
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.LifelongLearningApp)
@@ -17,9 +19,15 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.viewPager.apply{
+        binding.viewPager.apply {
             adapter = MyPageradapter(context as FragmentActivity)
         }
+
+        val tabElement: List<String> = Arrays.asList("서울", "경기도", "인천","충청도", "강원도", "세종","대전", "경상도","대구","울산","부산","전라도","광주","제주도")
+
+        TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
+            tab.text = "${tabElement.get(position)}"
+        }.attach()
 
 
     }
