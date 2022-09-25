@@ -5,11 +5,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.FragmentPagerAdapter
 import com.example.lifelonglearningapp.databinding.FragmentMainLectureBinding
+import kotlinx.android.synthetic.main.fragment_main_lecture.*
 
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+private const val ARG_PARAM1 = "title"
+private const val ARG_PARAM2 = "location"
+private const val ARG_PARAM3 = "period"
+private const val ARG_PARAM4 = "day_time"
+private const val ARG_PARAM5 = "price"
+private const val ARG_PARAM6 = "method"
 
 private var _binding: FragmentMainLectureBinding? = null
 private val binding get() = _binding!!
@@ -17,14 +21,22 @@ private val binding get() = _binding!!
 
 class MainLecture : Fragment() {
     // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private var title: String? = null
+    private var location: String? = null
+    private var period: String? = null
+    private var day_time: String? = null
+    private var price: String? = null
+    private var method: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+            title = it.getString(ARG_PARAM1)
+            location = it.getString(ARG_PARAM2)
+            period = it.getString(ARG_PARAM3)
+            day_time = it.getString(ARG_PARAM4)
+            price = it.getString(ARG_PARAM5)
+            method = it.getString(ARG_PARAM6)
         }
     }
 
@@ -34,7 +46,7 @@ class MainLecture : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         _binding = FragmentMainLectureBinding.inflate(inflater, container, false)
-        return inflater.inflate(R.layout.fragment_main_lecture, container, false)
+        return binding.root
     }
 
     override fun onDestroyView() {
@@ -43,16 +55,26 @@ class MainLecture : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        binding.lectureTitle.text = param1
+        binding.lectureTitle.text = title
+        binding.lectureLocation.text = location
+        binding.lecturePeriod.text = period
+        binding.lectureDayTime.text = day_time
+        binding.lecturePrice.text = price
+        binding.lectureMethod.text = method
     }
 
     companion object {
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
+        fun newInstance(title: String, location: String, period: String, day_time: String,
+                        price:String, method: String) =
             MainLecture().apply {
                 arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+                    putString(ARG_PARAM1, title)
+                    putString(ARG_PARAM2, location)
+                    putString(ARG_PARAM3, period)
+                    putString(ARG_PARAM4, day_time)
+                    putString(ARG_PARAM5, price)
+                    putString(ARG_PARAM6, method)
                 }
             }
     }

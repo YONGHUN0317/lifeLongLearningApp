@@ -25,18 +25,19 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:orientation="vertical"
             android:layout_marginStart="28dp"
+            android:orientation="vertical"
             app:layout_constraintBottom_toTopOf="@+id/search_image"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
 
             <TextView
                 android:id="@+id/title2"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:fontFamily="@font/fontstyle"
                 android:layout_marginTop="38dp"
+                android:fontFamily="@font/fontstyle"
                 android:gravity="top"
                 android:text="나의 삶을 풍요롭고"
                 android:textColor="#000000"
@@ -46,10 +47,10 @@
                 android:id="@+id/title3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/fontstyle"
-                android:gravity="top"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
+                android:fontFamily="@font/fontstyle"
+                android:gravity="top"
                 android:text="행복하게 하는 교육"
                 android:textColor="#000000"
                 android:textSize="28sp" />
@@ -134,8 +135,9 @@
             android:id="@+id/tabLayout"
             android:layout_width="340dp"
             android:layout_height="45dp"
+            android:layout_marginTop="5dp"
             app:tabMode="scrollable"
-            android:layout_marginStart="28dp"
+            android:layout_marginStart="32dp"
             android:background="@color/background"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"

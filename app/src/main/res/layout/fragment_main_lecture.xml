@@ -19,7 +19,7 @@
 
         <View
             android:id="@+id/lecture_rectangle"
-            android:layout_width="251dp"
+            android:layout_width="270dp"
             android:layout_height="373dp"
             android:background="@drawable/main_rectangle"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -34,10 +34,10 @@
             android:id="@+id/lecture_title"
             android:layout_width="205dp"
             android:layout_height="140dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="20dp"
             android:ellipsize="end"
             android:maxLines="4"
-            android:text="테스트asdklfhkljasdfhjkasfdkjhfjkhsdafjkdsfasdfasdfasfdsfdaasdfasdfasdf"
+            android:text="Hello blank fragment"
             android:textColor="#0A0A0A"
             android:textSize="21sp"
             app:layout_constraintEnd_toEndOf="@+id/lecture_rectangle"
