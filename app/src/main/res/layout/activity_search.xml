@@ -3,16 +3,62 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="200dp"
+    android:background="#ffa500"
+    >
 
     <View
         android:id="@+id/search_rectangle"
-        android:layout_width="276dp"
-        android:layout_height="169dp"
-        android:layout_marginTop="40dp"
+        android:layout_width="310dp"
+        android:layout_height="170dp"
         android:background="@drawable/search_rectangle"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
+
+
+    <TextView
+        android:id="@+id/search_title"
+        android:layout_width="273dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="제목"
+        android:textColor="#0A0A0A"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/search_date"
+        app:layout_constraintEnd_toEndOf="@+id/search_rectangle"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toStartOf="@+id/search_rectangle"
+        app:layout_constraintTop_toTopOf="@+id/search_rectangle"
+        app:layout_constraintVertical_bias="0.294" />
+
+    <TextView
+        android:id="@+id/search_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="96dp"
+        android:layout_marginBottom="12dp"
+        android:text="2022-02-07 ~ 2022-04-29"
+        android:textColor="#FA4A0C"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toTopOf="@+id/search_day"
+        app:layout_constraintEnd_toEndOf="@+id/search_rectangle" />
+
+    <TextView
+        android:id="@+id/search_day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="화+목 10 : 00 ~ 12 : 00"
+        android:textColor="#FA4A0C"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="@+id/search_rectangle"
+        app:layout_constraintEnd_toEndOf="@+id/search_rectangle"
+        app:layout_constraintHorizontal_bias="0.127"
+        app:layout_constraintStart_toStartOf="@+id/search_rectangle" />
 </androidx.constraintlayout.widget.ConstraintLayout>

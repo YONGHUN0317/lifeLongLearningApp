@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/search_top"
+        android:id="@+id/aftersearch_top"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@color/background"
@@ -19,20 +19,20 @@
 
 
         <View
-            android:id="@+id/search_arrow"
+            android:id="@+id/aftersearch_arrow"
             android:layout_width="24dp"
             android:layout_height="20dp"
             android:layout_marginStart="16dp"
             android:background="@drawable/back_arrow"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/search_view"
+            app:layout_constraintEnd_toStartOf="@+id/aftersearch_view"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.473" />
 
         <View
-            android:id="@+id/search_view"
+            android:id="@+id/aftersearch_view"
             android:layout_width="297dp"
             android:layout_height="38dp"
             android:background="@drawable/main_search"
@@ -42,20 +42,22 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
+            android:id="@+id/aftersearch_edittext"
             android:layout_width="265dp"
             android:layout_height="25dp"
             android:background="@null"
             android:hint="검색"
+            android:textSize="24sp"
             android:inputType="text"
             app:layout_constraintHorizontal_bias="0.5"
             android:maxLength="10"
-            app:layout_constraintBottom_toBottomOf="@+id/search_view"
-            app:layout_constraintEnd_toEndOf="@+id/search_view"
-            app:layout_constraintStart_toStartOf="@+id/search_view"
-            app:layout_constraintTop_toTopOf="@+id/search_view" />
+            app:layout_constraintBottom_toBottomOf="@+id/aftersearch_view"
+            app:layout_constraintEnd_toEndOf="@+id/aftersearch_view"
+            app:layout_constraintStart_toStartOf="@+id/aftersearch_view"
+            app:layout_constraintTop_toTopOf="@+id/aftersearch_view" />
 
         <View
-            android:id="@+id/view2"
+            android:id="@+id/aftersearch_glass"
             android:layout_width="24dp"
             android:layout_height="20dp"
             android:layout_marginEnd="16dp"
@@ -63,7 +65,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/search_view"
+            app:layout_constraintStart_toEndOf="@+id/aftersearch_view"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.473" />
 
@@ -71,15 +73,15 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/search_bottom"
+        android:id="@+id/aftersearch_bottom"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#0AFF460A"
+        android:background="#F6BB43"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.94"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/search_top"
+        app:layout_constraintTop_toBottomOf="@+id/aftersearch_top"
         app:layout_constraintWidth_percent="1.0">
 
     </androidx.constraintlayout.widget.ConstraintLayout>
