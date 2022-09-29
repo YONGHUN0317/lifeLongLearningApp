@@ -11,6 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LifelongLearningApp">
+
+        <meta-data
+            android:name="com.google.android.geo.API.KEY"
+            android:value="AIzaSyARb2vSaOD4Y49muMWzlQ4HVt3VKdQWVag"/>
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true"
