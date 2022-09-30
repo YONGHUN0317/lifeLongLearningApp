@@ -11,7 +11,7 @@
         android:layout_height="0dp"
         android:background="@color/background"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.07"
+        app:layout_constraintHeight_percent="0.1"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -20,7 +20,7 @@
 
         <View
             android:id="@+id/aftersearch_arrow"
-            android:layout_width="24dp"
+            android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginStart="16dp"
             android:background="@drawable/back_arrow"
@@ -33,34 +33,38 @@
 
         <View
             android:id="@+id/aftersearch_view"
-            android:layout_width="297dp"
-            android:layout_height="38dp"
+            android:layout_width="310dp"
+            android:layout_height="53dp"
             android:background="@drawable/main_search"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.478" />
 
         <EditText
             android:id="@+id/aftersearch_edittext"
-            android:layout_width="265dp"
-            android:layout_height="25dp"
+            android:layout_width="261dp"
+            android:layout_height="38dp"
             android:background="@null"
             android:hint="검색"
-            android:textSize="24sp"
+            android:textColor="#000000"
+            android:textColorHint="#8e8e93"
             android:inputType="text"
-            app:layout_constraintHorizontal_bias="0.5"
             android:maxLength="10"
+            android:textSize="22sp"
             app:layout_constraintBottom_toBottomOf="@+id/aftersearch_view"
             app:layout_constraintEnd_toEndOf="@+id/aftersearch_view"
+            app:layout_constraintHorizontal_bias="0.489"
             app:layout_constraintStart_toStartOf="@+id/aftersearch_view"
-            app:layout_constraintTop_toTopOf="@+id/aftersearch_view" />
+            app:layout_constraintTop_toTopOf="@+id/aftersearch_view"
+            app:layout_constraintVertical_bias="0.533" />
 
         <View
             android:id="@+id/aftersearch_glass"
-            android:layout_width="24dp"
-            android:layout_height="20dp"
-            android:layout_marginEnd="16dp"
+            android:layout_width="30dp"
+            android:layout_height="35dp"
+            android:layout_marginEnd="10dp"
             android:background="@drawable/magnifyingglass"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -76,10 +80,10 @@
         android:id="@+id/aftersearch_bottom"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#F6BB43"
+        android:background="#F2E7E4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.94"
+        app:layout_constraintHeight_percent="0.9"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/aftersearch_top"
         app:layout_constraintWidth_percent="1.0">

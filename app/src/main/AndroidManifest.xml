@@ -14,11 +14,12 @@
 
         <meta-data
             android:name="com.google.android.geo.API.KEY"
-            android:value="AIzaSyARb2vSaOD4Y49muMWzlQ4HVt3VKdQWVag"/>
+            android:value="AIzaSyARb2vSaOD4Y49muMWzlQ4HVt3VKdQWVag" />
+
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true"
-            android:theme="@style/LifelongLearningApp">
+            android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -26,11 +27,15 @@
         </activity>
         <activity
             android:name=".SearchPageActivity"
-            android:theme="@style/Theme.LifelongLearningApp" />
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".MainActivity"
             android:exported="false"
-            android:theme="@style/Theme.LifelongLearningApp" />
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".LectureInformationActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
     </application>
 
 </manifest>
