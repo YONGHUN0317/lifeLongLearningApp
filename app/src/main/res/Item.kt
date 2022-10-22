@@ -1,0 +1,57 @@
+
+import com.squareup.moshi.Json
+
+data class Item(
+    @Json(name = "edcColseTime")
+    val edcColseTime: String?,
+    @Json(name = "edcEndDay")
+    val edcEndDay: String?,
+    @Json(name = "edcMthType")
+    val edcMthType: String?,
+    @Json(name = "edcPlace")
+    val edcPlace: String?,
+    @Json(name = "edcRdnmadr")
+    val edcRdnmadr: String?,
+    @Json(name = "edcStartDay")
+    val edcStartDay: String?,
+    @Json(name = "edcStartTime")
+    val edcStartTime: String?,
+    @Json(name = "edcTrgetType")
+    val edcTrgetType: String?,
+    @Json(name = "homepageUrl")
+    val homepageUrl: String?,
+    @Json(name = "instrctrNm")
+    val instrctrNm: String?,
+    @Json(name = "insttCode")
+    val insttCode: String?,
+    @Json(name = "lctreCo")
+    val lctreCo: String?,
+    @Json(name = "lctreCost")
+    val lctreCost: String?,
+    @Json(name = "lctreNm")
+    val lctreNm: String?,
+    @Json(name = "lrnAcnutAckestYn")
+    val lrnAcnutAckestYn: String?,
+    @Json(name = "oadtCtLctreYn")
+    val oadtCtLctreYn: String?,
+    @Json(name = "operDay")
+    val operDay: String?,
+    @Json(name = "operInstitutionNm")
+    val operInstitutionNm: String?,
+    @Json(name = "operPhoneNumber")
+    val operPhoneNumber: String?,
+    @Json(name = "pntBankAckestYn")
+    val pntBankAckestYn: String?,
+    @Json(name = "psncpa")
+    val psncpa: String?,
+    @Json(name = "rceptEndDate")
+    val rceptEndDate: String?,
+    @Json(name = "rceptMthType")
+    val rceptMthType: String?,
+    @Json(name = "rceptStartDate")
+    val rceptStartDate: String?,
+    @Json(name = "referenceDate")
+    val referenceDate: String?,
+    @Json(name = "slctnMthType")
+    val slctnMthType: String?
+)
