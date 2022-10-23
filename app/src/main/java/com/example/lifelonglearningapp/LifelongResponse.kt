@@ -1,5 +1,5 @@
 package com.example.lifelonglearningapp
-import Item
+import android.content.ClipData
 import com.squareup.moshi.Json
 
 
@@ -30,7 +30,7 @@ data class Header(
 
 data class Body(
     @field:Json(name = "items")
-    val items: List<Item?>?,
+    val items: List<ClipData.Item?>?,
     @field:Json(name = "numOfRows")
     val numOfRows: String?,
     @field:Json(name = "pageNo")

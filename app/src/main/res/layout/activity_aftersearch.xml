@@ -11,7 +11,7 @@
         android:layout_height="0dp"
         android:background="@color/background"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintHeight_percent="0.12"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -25,69 +25,44 @@
             android:layout_marginStart="16dp"
             android:background="@drawable/back_arrow"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/aftersearch_view"
+            app:layout_constraintEnd_toStartOf="@+id/search_view"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.473" />
 
-        <View
-            android:id="@+id/aftersearch_view"
-            android:layout_width="310dp"
-            android:layout_height="53dp"
-            android:background="@drawable/main_search"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.478" />
-
-        <EditText
-            android:id="@+id/aftersearch_edittext"
-            android:layout_width="261dp"
-            android:layout_height="38dp"
-            android:background="@null"
-            android:hint="검색"
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/search_view"
+            android:layout_width="324dp"
+            android:layout_height="57dp"
+            android:layout_marginEnd="32dp"
             android:textColor="#000000"
-            android:textColorHint="#8e8e93"
             android:inputType="text"
-            android:maxLength="10"
-            android:textSize="22sp"
-            app:layout_constraintBottom_toBottomOf="@+id/aftersearch_view"
-            app:layout_constraintEnd_toEndOf="@+id/aftersearch_view"
-            app:layout_constraintHorizontal_bias="0.489"
-            app:layout_constraintStart_toStartOf="@+id/aftersearch_view"
-            app:layout_constraintTop_toTopOf="@+id/aftersearch_view"
-            app:layout_constraintVertical_bias="0.533" />
-
-        <View
-            android:id="@+id/aftersearch_glass"
-            android:layout_width="30dp"
-            android:layout_height="35dp"
-            android:layout_marginEnd="10dp"
-            android:background="@drawable/magnifyingglass"
+            app:iconifiedByDefault="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/aftersearch_view"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.473" />
+            app:layout_constraintVertical_bias="0.52"
+            app:queryBackground="@drawable/main_search"
+            app:searchIcon="@drawable/magnifyingglass"
+            app:queryHint="검색"
+            />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/aftersearch_bottom"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:scrollbars="vertical"
         android:background="#F2E7E4"
+        tools:listitem="@layout/item_search"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.9"
+        app:layout_constraintHeight_percent="0.88"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/aftersearch_top"
-        app:layout_constraintWidth_percent="1.0">
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_constraintWidth_percent="1.0"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
