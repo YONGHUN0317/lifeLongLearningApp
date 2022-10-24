@@ -27,7 +27,7 @@
         </activity>
         <activity
             android:name=".SearchPageActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
+            android:theme="@style/afterSearch" />
         <activity
             android:name=".MainActivity"
             android:exported="false"

@@ -36,7 +36,6 @@
             android:layout_width="324dp"
             android:layout_height="57dp"
             android:layout_marginEnd="32dp"
-            android:textColor="#000000"
             android:inputType="text"
             app:iconifiedByDefault="false"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -44,9 +43,9 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.52"
             app:queryBackground="@drawable/main_search"
-            app:searchIcon="@drawable/magnifyingglass"
             app:queryHint="검색"
-            />
+             />
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -55,14 +54,15 @@
         android:id="@+id/aftersearch_bottom"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:scrollbars="vertical"
         android:background="#F2E7E4"
-        tools:listitem="@layout/item_search"
+
+        app:fastScrollEnabled="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.88"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/aftersearch_top"
-        app:layout_constraintWidth_percent="1.0"/>
+        app:layout_constraintWidth_percent="1.0"
+        tools:listitem="@layout/item_search" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
