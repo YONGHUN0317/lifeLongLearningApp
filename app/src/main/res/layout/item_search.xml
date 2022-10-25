@@ -3,62 +3,62 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="190dp"
-    android:background="#F2E7E4"
-    >
-
-    <View
-        android:id="@+id/search_rectangle"
-        android:layout_width="356dp"
-        android:layout_height="160dp"
-        android:background="@drawable/search_rectangle"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5" />
+    android:layout_height="150dp"
+    android:background="#F5F4F3">
 
 
     <TextView
         android:id="@+id/search_title"
-        android:layout_width="273dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="334dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="28dp"
         android:ellipsize="end"
-        android:maxLines="2"
         android:text="제목"
         android:textColor="#0A0A0A"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/search_date"
-        app:layout_constraintEnd_toEndOf="@+id/search_rectangle"
-        app:layout_constraintHorizontal_bias="0.485"
-        app:layout_constraintStart_toStartOf="@+id/search_rectangle"
-        app:layout_constraintTop_toTopOf="@+id/search_rectangle"
-        app:layout_constraintVertical_bias="0.294" />
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/search_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="120dp"
+        android:layout_marginStart="28dp"
         android:layout_marginBottom="8dp"
         android:text="2022-02-07 ~ 2022-04-29"
-        android:textColor="#FA4A0C"
-        android:textSize="17sp"
-        app:layout_constraintBottom_toTopOf="@+id/search_day"
-        app:layout_constraintEnd_toEndOf="@+id/search_rectangle" />
+
+        android:textColor="#494848"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_title"
+        app:layout_constraintVertical_bias="0.846" />
 
     <TextView
         android:id="@+id/search_day"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
-        android:text="화+목 10 : 00 ~ 12 : 00"
-        android:textColor="#FA4A0C"
-        android:textSize="17sp"
-        app:layout_constraintBottom_toBottomOf="@+id/search_rectangle"
-        app:layout_constraintEnd_toEndOf="@+id/search_rectangle"
-        app:layout_constraintHorizontal_bias="0.219"
-        app:layout_constraintStart_toStartOf="@+id/search_rectangle" />
+        android:layout_width="153dp"
+        android:layout_height="19dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="8dp"
+        android:text="월+화+수+목+금+토+일"
+        android:textColor="#FF494848"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_title"
+        app:layout_constraintVertical_bias="0.785" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="350dp"
+        android:layout_height="0.4dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="16dp"
+        android:background="#868B8F"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

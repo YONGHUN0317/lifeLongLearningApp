@@ -9,6 +9,6 @@
     <style name="afterSearch" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorControlNormal">#000000</item>
         <item name="android:editTextColor">#000000</item>
-        <item name="android:textColorHint">#000000</item>
+        <item name="android:textColorHint">#BFBFBF</item>
     </style>
 </resources>

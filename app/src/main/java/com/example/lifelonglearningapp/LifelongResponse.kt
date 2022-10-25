@@ -7,24 +7,36 @@ import com.squareup.moshi.Json
 
 
 data class LifelongResponse(
-    @field:Json(name = "fields")
-    val fields: List<Field?>?,
-    @field:Json(name = "records")
-    val records: List<Record?>?
+    @field:Json(name = "LifelongInfo")
+    val emgMedInfo: List<LifelongInfo>?
 )
+
+data class LifelongInfo(
+    val head: List<Head>?,
+    val row: List<Row>?
+)
+
 
 data class Field(
     @field:Json(name = "id")
     val id: String?
 )
 
-data class Header(
-    @field:Json(name = "resultCode")
-    val resultCode: String?,
-    @field:Json(name = "resultMsg")
-    val resultMsg: String?,
-    @field:Json(name = "type")
-    val type: String?
+data class Head(
+    @field:Json(name = "api_version")
+    val apiVersion: String?, // 1.0
+    @field:Json(name = "list_total_count")
+    val listTotalCount: Int?, // 172
+    @field:Json(name = "RESULT")
+    val rESULT: RESULT?
+
+)
+
+data class RESULT(
+    @field:Json(name = "CODE")
+    val cODE: String?, // INFO-000
+    @field:Json(name = "MESSAGE")
+    val mESSAGE: String? // 정상 처리되었습니다.
 )
 
 
@@ -41,7 +53,7 @@ data class Body(
 
 
 
-data class Record(
+data class Row(
     @field:Json(name = "edcColseTime")
     val edcColseTime: String?,
     @field:Json(name = "edcEndDay")
@@ -96,9 +108,3 @@ data class Record(
     val slctnMthType: String?
 )
 
-data class Response(
-    @field:Json(name = "body")
-    val body: Body?,
-    @field:Json(name = "header")
-    val header: Header?
-)
