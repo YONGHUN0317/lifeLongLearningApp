@@ -8,7 +8,7 @@ import com.squareup.moshi.Json
 
 data class LifelongResponse(
     @field:Json(name = "LifelongInfo")
-    val emgMedInfo: List<LifelongInfo>?
+    val LifelongInfo: List<LifelongInfo>?
 )
 
 data class LifelongInfo(

@@ -46,6 +46,8 @@
             app:queryHint="검색"
              />
 
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
@@ -70,6 +72,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:listitem="@layout/item_search" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
