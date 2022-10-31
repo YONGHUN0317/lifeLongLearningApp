@@ -37,8 +37,6 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, SearchPageActivity::class.java)
             startActivity(intent)
         }
-
-
     }
 
 }

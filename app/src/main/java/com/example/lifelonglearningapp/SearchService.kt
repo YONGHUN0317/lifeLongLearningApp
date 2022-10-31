@@ -6,7 +6,7 @@ import retrofit2.http.Query
 
 
 interface SearchService {
-    @GET("LifelongInfo")
+    @GET("tn_pubr_public_lftm_lrn_lctre_api")
     fun getEmgMedData(
         @Query("KEY") KEY: String,
         @Query("Type") Type: String

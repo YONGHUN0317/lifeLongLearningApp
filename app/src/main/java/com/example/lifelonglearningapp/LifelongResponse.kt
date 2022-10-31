@@ -1,110 +1,108 @@
 package com.example.lifelonglearningapp
 import android.content.ClipData
 import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
+import com.google.gson.annotations.SerializedName
 
-
-
-
-
+@JsonClass(generateAdapter = true)
 data class LifelongResponse(
-    @field:Json(name = "LifelongInfo")
-    val LifelongInfo: List<LifelongInfo>?
+    @SerializedName("response")
+    val response: Response?
 )
 
-data class LifelongInfo(
-    val head: List<Head>?,
-    val row: List<Row>?
-)
-
-
-data class Field(
-    @field:Json(name = "id")
-    val id: String?
-)
-
-data class Head(
-    @field:Json(name = "api_version")
-    val apiVersion: String?, // 1.0
-    @field:Json(name = "list_total_count")
-    val listTotalCount: Int?, // 172
-    @field:Json(name = "RESULT")
-    val rESULT: RESULT?
-
-)
-
-data class RESULT(
-    @field:Json(name = "CODE")
-    val cODE: String?, // INFO-000
-    @field:Json(name = "MESSAGE")
-    val mESSAGE: String? // 정상 처리되었습니다.
+@JsonClass(generateAdapter = true)
+data class Response(
+    @SerializedName("body")
+    val body: Body?,
+    @SerializedName("header")
+    val header: Header?
 )
 
 
+
+//@JsonClass(generateAdapter = true)
+//data class LifelongInfo(
+//    val head: List<Header>?,
+//    val row: List<Item>?
+//)
+
+
+@JsonClass(generateAdapter = true)
+data class Header(
+    @SerializedName("resultCode")
+    val resultCode: String?,
+    @SerializedName("resultMsg")
+    val resultMsg: String?,
+    @SerializedName("type")
+    val type: String?
+)
+
+@JsonClass(generateAdapter = true)
 data class Body(
-    @field:Json(name = "items")
-    val items: List<ClipData.Item?>?,
-    @field:Json(name = "numOfRows")
+    @SerializedName("items")
+    val items: List<Item?>?,
+    @SerializedName("numOfRows")
     val numOfRows: String?,
-    @field:Json(name = "pageNo")
+    @SerializedName("pageNo")
     val pageNo: String?,
-    @field:Json(name = "totalCount")
+    @SerializedName("totalCount")
     val totalCount: String?
 )
 
 
-
-data class Row(
-    @field:Json(name = "edcColseTime")
+@JsonClass(generateAdapter = true)
+data class Item(
+    @SerializedName("edcColseTime")
     val edcColseTime: String?,
-    @field:Json(name = "edcEndDay")
+    @SerializedName("edcEndDay")
     val edcEndDay: String?,
-    @field:Json(name = "edcMthType")
+    @SerializedName("edcMthType")
     val edcMthType: String?,
-    @field:Json(name = "edcPlace")
+    @SerializedName("edcPlace")
     val edcPlace: String?,
-    @field:Json(name = "edcRdnmadr")
+    @SerializedName("edcRdnmadr")
     val edcRdnmadr: String?,
-    @field:Json(name = "edcStartDay")
+    @SerializedName("edcStartDay")
     val edcStartDay: String?,
-    @field:Json(name = "edcStartTime")
+    @SerializedName("edcStartTime")
     val edcStartTime: String?,
-    @field:Json(name = "edcTrgetType")
+    @SerializedName("edcTrgetType")
     val edcTrgetType: String?,
-    @field:Json(name = "homepageUrl")
+    @SerializedName("homepageUrl")
     val homepageUrl: String?,
-    @field:Json(name = "instrctrNm")
+    @SerializedName("instrctrNm")
     val instrctrNm: String?,
-    @field:Json(name = "insttCode")
+    @SerializedName("insttCode")
     val insttCode: String?,
-    @field:Json(name = "lctreCo")
+    @SerializedName("lctreCo")
     val lctreCo: String?,
-    @field:Json(name = "lctreCost")
+    @SerializedName("lctreCost")
     val lctreCost: String?,
-    @field:Json(name = "lctreNm")
+    @SerializedName("lctreNm")
     val lctreNm: String?,
-    @field:Json(name = "lrnAcnutAckestYn")
+    @SerializedName("lrnAcnutAckestYn")
     val lrnAcnutAckestYn: String?,
-    @field:Json(name = "oadtCtLctreYn")
+    @SerializedName("oadtCtLctreYn")
     val oadtCtLctreYn: String?,
-    @field:Json(name = "operDay")
+    @SerializedName("operDay")
     val operDay: String?,
-    @field:Json(name = "operInstitutionNm")
+    @SerializedName("operInstitutionNm")
     val operInstitutionNm: String?,
-    @field:Json(name = "operPhoneNumber")
+    @SerializedName("operPhoneNumber")
     val operPhoneNumber: String?,
-    @field:Json(name = "pntBankAckestYn")
+    @SerializedName("pntBankAckestYn")
     val pntBankAckestYn: String?,
-    @field:Json(name = "psncpa")
+    @SerializedName("psncpa")
     val psncpa: String?,
-    @field:Json(name = "rceptEndDate")
+    @SerializedName("rceptEndDate")
     val rceptEndDate: String?,
-    @field:Json(name = "rceptMthType")
+    @SerializedName("rceptMthType")
     val rceptMthType: String?,
-    @field:Json(name = "rceptStartDate")
+    @SerializedName("rceptStartDate")
     val rceptStartDate: String?,
-    @field:Json(name = "referenceDate")
+    @SerializedName("referenceDate")
     val referenceDate: String?,
-    @field:Json(name = "slctnMthType")
+    @SerializedName("slctnMthType")
     val slctnMthType: String?
 )
 

@@ -1,5 +1,4 @@
 package com.example.lifelonglearningapp
-
 import android.graphics.Color
 import android.graphics.Color.BLACK
 import android.os.Bundle
@@ -16,7 +15,7 @@ import retrofit2.Callback
 
 class SearchPageActivity : AppCompatActivity() {
 
-    private val binding : ActivityAftersearchBinding by lazy {
+    private val binding: ActivityAftersearchBinding by lazy {
         ActivityAftersearchBinding.inflate(layoutInflater)
     }
 
@@ -34,28 +33,31 @@ class SearchPageActivity : AppCompatActivity() {
             addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
         }
 
-        binding.aftersearchArrow.setOnClickListener{
+        binding.aftersearchArrow.setOnClickListener {
             retrofitWork()
         }
     }
+
     private fun retrofitWork() {
         val service = RetrofitApi.searchService
 
         service.getEmgMedData(getString(R.string.api_key), "json")
-
-            .enqueue(object : Callback<LifelongResponse>{
+            .enqueue(object : Callback<LifelongResponse> {
                 override fun onResponse(
                     call: retrofit2.Call<LifelongResponse>,
                     response: retrofit2.Response<LifelongResponse>
                 ) {
-                    TODO("Not yet implemented")
+                    if (response.isSuccessful) {
+                        Log.d("Success", response.body().toString())
+//                        val result = response.body()?.response?.body?.items
+//                        myRecyclerViewAdapter.submitList(result!!)
+                    }
                 }
 
                 override fun onFailure(call: retrofit2.Call<LifelongResponse>, t: Throwable) {
-                    TODO("Not yet implemented")
+                    Log.d("Failed",t.message.toString())
                 }
 
-
-            }
+            })
     }
 }
