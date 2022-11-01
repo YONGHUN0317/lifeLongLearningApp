@@ -49,8 +49,8 @@ class SearchPageActivity : AppCompatActivity() {
                 ) {
                     if (response.isSuccessful) {
                         Log.d("Success", response.body().toString())
-//                        val result = response.body()?.response?.body?.items
-//                        myRecyclerViewAdapter.submitList(result!!)
+                        val result = response?.body()?.response?.body?.items
+                        myRecyclerViewAdapter.submitList(result!!)
                     }
                 }
 

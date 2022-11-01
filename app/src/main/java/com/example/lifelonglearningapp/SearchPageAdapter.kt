@@ -24,7 +24,7 @@ class SearchPageAdapter : ListAdapter<Items, SearchPageAdapter.SearchViewHolder>
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Items) {
             with(binding) {
-                searchTitle.text = item.instrctrNm
+                searchTitle.text = item.lctreNm
                 var searchDate1 = item.edcStartDay
                 var searchDate2 = " ~ "
                 var searchDate3 = item.edcEndDay
