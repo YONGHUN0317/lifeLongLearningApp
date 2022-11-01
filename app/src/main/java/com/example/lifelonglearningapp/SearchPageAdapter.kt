@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.lifelonglearningapp.databinding.ItemSearchBinding
 import java.util.stream.DoubleStream.concat
 
-class SearchPageAdapter : ListAdapter<Item, SearchPageAdapter.SearchViewHolder>(DiffCallback) {
+class SearchPageAdapter : ListAdapter<Items, SearchPageAdapter.SearchViewHolder>(DiffCallback) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchViewHolder {
         val binding = ItemSearchBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -22,7 +22,7 @@ class SearchPageAdapter : ListAdapter<Item, SearchPageAdapter.SearchViewHolder>(
 
     class SearchViewHolder(private val binding: ItemSearchBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: Item) {
+        fun bind(item: Items) {
             with(binding) {
                 searchTitle.text = item.instrctrNm
                 var searchDate1 = item.edcStartDay
@@ -39,12 +39,12 @@ class SearchPageAdapter : ListAdapter<Item, SearchPageAdapter.SearchViewHolder>(
     }
 
     companion object {
-        private val DiffCallback = object : DiffUtil.ItemCallback<Item>() {
-            override fun areItemsTheSame(oldItem: Item, newItem: Item): Boolean {
+        private val DiffCallback = object : DiffUtil.ItemCallback<Items>() {
+            override fun areItemsTheSame(oldItem: Items, newItem: Items): Boolean {
                 return oldItem.hashCode() == newItem.hashCode()
             }
 
-            override fun areContentsTheSame(oldItem: Item, newItem: Item): Boolean {
+            override fun areContentsTheSame(oldItem: Items, newItem: Items): Boolean {
                 return oldItem == newItem
             }
         }

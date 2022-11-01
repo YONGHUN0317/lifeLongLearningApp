@@ -23,7 +23,6 @@ import com.google.gson.JsonDeserializer
 object RetrofitApi {
     private const val BASE_URL = "http://api.data.go.kr/openapi/"
 
-
     private val okHttpClient: OkHttpClient by lazy {
         OkHttpClient.Builder()
             .addInterceptor(HttpLoggingInterceptor().apply {
