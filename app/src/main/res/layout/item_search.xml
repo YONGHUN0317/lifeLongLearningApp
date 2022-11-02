@@ -9,12 +9,14 @@
     android:orientation="vertical">
 
     <TextView
+
         android:id="@+id/search_title"
         android:layout_width="297dp"
         android:layout_height="25dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="3dp"
         android:ellipsize="end"
+        android:maxLines="1"
         android:text="제목"
         android:textColor="#0A0A0A"
         android:textSize="16sp"
@@ -27,18 +29,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
-
         android:text="2022-02-07 ~ 2022-04-29"
         android:textColor="#494848"
         android:textSize="15sp"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="3dp" />
 
     <TextView
         android:id="@+id/search_day"
-        android:layout_width="153dp"
-        android:layout_height="19dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="3dp"
         android:layout_marginBottom="8dp"
         android:text="월+화+수+목+금+토+일"
         android:textColor="#FF494848"
@@ -46,12 +47,12 @@
 
     <View
         android:id="@+id/view"
-        android:layout_width="350dp"
-        android:layout_height="0.4dp"
+        android:layout_width="wrap_content"
+        android:layout_height="0.3dp"
         android:layout_marginStart="28dp"
-        android:layout_marginBottom="16dp"
-        android:background="#868B8F"
-     />
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="28dp"
+        android:background="#868B8F" />
 </LinearLayout>
 
 

@@ -1,4 +1,5 @@
 package com.example.lifelonglearningapp
+
 import android.graphics.Color
 import android.graphics.Color.BLACK
 import android.os.Bundle
@@ -32,10 +33,8 @@ class SearchPageActivity : AppCompatActivity() {
             adapter = myRecyclerViewAdapter
             addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
         }
+        retrofitWork()
 
-        binding.aftersearchArrow.setOnClickListener {
-            retrofitWork()
-        }
     }
 
     private fun retrofitWork() {
@@ -48,14 +47,14 @@ class SearchPageActivity : AppCompatActivity() {
                     response: retrofit2.Response<LifelongResponse>
                 ) {
                     if (response.isSuccessful) {
-                        Log.d("Success", response.body().toString())
+                        Log.d("Success", response?.body()?.response?.body?.items.toString())
                         val result = response?.body()?.response?.body?.items
                         myRecyclerViewAdapter.submitList(result!!)
                     }
                 }
 
                 override fun onFailure(call: retrofit2.Call<LifelongResponse>, t: Throwable) {
-                    Log.d("Failed",t.message.toString())
+                    Log.d("Failed", t.message.toString())
                 }
 
             })
