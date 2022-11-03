@@ -1,6 +1,7 @@
 package com.example.lifelonglearningapp
 
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -23,6 +24,7 @@ class SearchPageAdapter : ListAdapter<Items, SearchPageAdapter.SearchViewHolder>
     class SearchViewHolder(private val binding: ItemSearchBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Items) {
+
             with(binding) {
                 searchTitle.text = item.lctreNm
                 var searchDate1 = item.edcStartDay
@@ -32,7 +34,6 @@ class SearchPageAdapter : ListAdapter<Items, SearchPageAdapter.SearchViewHolder>
                 searchDate.text = searchDateTotal
                 searchDay.text = item.operDay
 
-
             }
 
         }
@@ -41,6 +42,7 @@ class SearchPageAdapter : ListAdapter<Items, SearchPageAdapter.SearchViewHolder>
     companion object {
         private val DiffCallback = object : DiffUtil.ItemCallback<Items>() {
             override fun areItemsTheSame(oldItem: Items, newItem: Items): Boolean {
+                //return oldItem == newItem
                 return oldItem.hashCode() == newItem.hashCode()
             }
 
