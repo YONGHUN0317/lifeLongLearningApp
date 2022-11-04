@@ -16,6 +16,7 @@ import retrofit2.Callback
 
 class SearchPageActivity : AppCompatActivity() {
 
+
     private val binding: ActivityAftersearchBinding by lazy {
         ActivityAftersearchBinding.inflate(layoutInflater)
     }
@@ -24,10 +25,11 @@ class SearchPageActivity : AppCompatActivity() {
         SearchPageAdapter()
     }
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-
         binding.recyclerView.apply {
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
             adapter = myRecyclerViewAdapter
@@ -37,10 +39,12 @@ class SearchPageActivity : AppCompatActivity() {
 
     }
 
+
+
     private fun retrofitWork() {
         val service = RetrofitApi.searchService
 
-        service.getEmgMedData(getString(R.string.api_key), "json")
+        service.getEmgMedData(getString(R.string.api_key), 0,20,"json")
             .enqueue(object : Callback<LifelongResponse> {
                 override fun onResponse(
                     call: retrofit2.Call<LifelongResponse>,
@@ -59,4 +63,8 @@ class SearchPageActivity : AppCompatActivity() {
 
             })
     }
+
+
+
+
 }

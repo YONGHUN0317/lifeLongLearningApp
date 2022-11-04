@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.lifelonglearningapp.databinding.ItemSearchBinding
+import com.paginate.Paginate
 import java.util.stream.DoubleStream.concat
 
 class SearchPageAdapter : ListAdapter<Items, SearchPageAdapter.SearchViewHolder>(DiffCallback) {
@@ -38,6 +39,9 @@ class SearchPageAdapter : ListAdapter<Items, SearchPageAdapter.SearchViewHolder>
 
         }
     }
+
+
+
 
     companion object {
         private val DiffCallback = object : DiffUtil.ItemCallback<Items>() {

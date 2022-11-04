@@ -1,18 +1,20 @@
 package com.example.lifelonglearningapp
+
 import android.content.ClipData
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 import com.google.gson.annotations.SerializedName
 import com.google.gson.annotations.Expose
-
+import retrofit2.http.Url
 
 
 @JsonClass(generateAdapter = true)
 data class LifelongResponse(
     @Expose
     @SerializedName("response")
-    var response: Response
-)
+    var response: Response,
+
+    )
 
 @JsonClass(generateAdapter = true)
 data class Response(
@@ -23,6 +25,7 @@ data class Response(
     @SerializedName("body")
     var body: Body
 )
+
 
 @JsonClass(generateAdapter = true)
 data class Body(
@@ -37,7 +40,7 @@ data class Body(
     val numOfRows: String,
     @Expose
     @SerializedName("pageNo")
-    val pageNo: String
+    val pageNo: String,
 )
 
 @JsonClass(generateAdapter = true)

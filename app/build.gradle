@@ -53,7 +53,7 @@ dependencies {
     implementation 'com.google.android.gms:play-services-maps:18.1.0'
     implementation 'com.google.android.gms:play-services-location:21.0.0'
 
-
+    implementation 'androidx.paging:paging-runtime-ktx:3.1.1'
     implementation "com.squareup.retrofit2:retrofit:2.9.0"
     implementation 'com.squareup.retrofit2:converter-moshi:2.9.0'
     // Retrofit with Moshi Converter
@@ -66,8 +66,11 @@ dependencies {
 
 
 
+    implementation "com.xwray:groupie:2.10.1"
+    implementation "com.xwray:groupie:2.10.1"
+    implementation "com.xwray:groupie-viewbinding:2.10.1"
 
-
+    implementation "com.github.markomilos:paginate:1.0.0"
     implementation 'androidx.viewpager2:viewpager2:1.0.0'
     implementation 'com.google.android.material:material:1.6.0'
     implementation 'androidx.core:core-ktx:1.9.0'
