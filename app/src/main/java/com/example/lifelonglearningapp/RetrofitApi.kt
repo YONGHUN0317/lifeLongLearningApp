@@ -18,8 +18,6 @@ import com.google.gson.JsonElement
 import com.google.gson.JsonDeserializer
 
 
-
-
 object RetrofitApi {
     private const val BASE_URL = "http://api.data.go.kr/openapi/"
 

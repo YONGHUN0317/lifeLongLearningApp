@@ -10,8 +10,8 @@ interface SearchService {
     @GET("tn_pubr_public_lftm_lrn_lctre_api")
     fun getEmgMedData(
         @Query("serviceKey") KEY: String,
-        @Query("pageNo") Number: Int = 0,
+        @Query("pageNo") Number: Int,
         @Query("numOfRows") Rows: Int = 20,
-        @Query("type") Type: String
-    ): Call<LifelongResponse>
+        @Query("type") Type: String = "json"
+    ): LifelongResponse
 }
