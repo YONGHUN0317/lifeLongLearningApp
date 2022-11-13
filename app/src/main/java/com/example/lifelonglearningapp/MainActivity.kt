@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
 
         // 메인 검색 선택 시 이벤트 설정
         search_image.setOnClickListener {
-            val intent = Intent(this, SearchPageActivity::class.java)
+            val intent = Intent(this, SearchActivity::class.java)
             startActivity(intent)
         }
     }

@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".LifelongApp"
         android:allowBackup="true"
         android:usesCleartextTraffic="true"
         android:icon="@mipmap/ic_launcher"
@@ -27,9 +28,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SearchPageActivity"
-            android:theme="@style/afterSearch" />
-        <activity
             android:name=".MainActivity"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
@@ -37,6 +35,11 @@
             android:name=".LectureInformationActivity"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".SearchActivity"
+            android:exported="false"
+            android:theme="@style/afterSearch" />
+
     </application>
 
 </manifest>
