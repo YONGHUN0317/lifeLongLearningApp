@@ -15,11 +15,14 @@ class SearchPagingAdapter :
 
     inner class SearchViewHolder(private val binding: ItemSearchBinding) :
         RecyclerView.ViewHolder(binding.root) {
-
         fun bindAdapter(item: Items) = with(binding) {
             searchTitle.text = item.lctreNm
             searchDay.text = item.edcStartDay + " ~ " + item.edcEndDay
             searchDate.text = item.operDay
+
+//            itemView.setOnSingleClickListener {
+//
+//            }
         }
     }
 

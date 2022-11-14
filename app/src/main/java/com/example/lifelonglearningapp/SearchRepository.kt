@@ -9,7 +9,7 @@ import javax.inject.Inject
 class SearchRepository @Inject constructor(private val apiService: ApiService) {
 
     fun getQuotes() = Pager(
-        config = PagingConfig(pageSize = 10),
+        config = PagingConfig(pageSize = 10, maxSize = 40),
         pagingSourceFactory = { SearchPagingSource(apiService)
         }
     ).liveData
