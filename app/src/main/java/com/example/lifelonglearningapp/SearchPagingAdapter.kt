@@ -1,14 +1,23 @@
 package com.example.lifelonglearningapp
 
+import android.annotation.SuppressLint
+import android.content.ContentValues.TAG
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Filter
+import android.widget.Filterable
 import android.widget.TextView
+import android.widget.Toast
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.lifelonglearningapp.databinding.ItemSearchBinding
+import com.google.android.gms.common.util.WorkSourceUtil.size
+import timber.log.Timber
+import java.nio.file.DirectoryStream
+import java.nio.file.Files.size
 
 class SearchPagingAdapter :
     PagingDataAdapter<Items, SearchPagingAdapter.SearchViewHolder>(COMPARATOR) {
@@ -16,10 +25,10 @@ class SearchPagingAdapter :
     inner class SearchViewHolder(private val binding: ItemSearchBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bindAdapter(item: Items) = with(binding) {
+
             searchTitle.text = item.lctreNm
             searchDay.text = item.edcStartDay + " ~ " + item.edcEndDay
             searchDate.text = item.operDay
-
 //            itemView.setOnSingleClickListener {
 //
 //            }
@@ -40,6 +49,7 @@ class SearchPagingAdapter :
     }
 
 
+
     companion object {
         private val COMPARATOR = object : DiffUtil.ItemCallback<Items>() {
             override fun areItemsTheSame(oldItem: Items, newItem: Items): Boolean {
@@ -51,6 +61,7 @@ class SearchPagingAdapter :
             }
         }
     }
+
 
 
 }

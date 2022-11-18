@@ -9,7 +9,15 @@ interface ApiService {
     @GET("tn_pubr_public_lftm_lrn_lctre_api")
     suspend fun getEmgMedData(
         @Query("serviceKey") KEY: String,
-        @Query("pageNo") Number: Int,
+        @Query("pageNo") Page: Int,
         @Query("type") Type: String = "json"
+    ): LifelongResponse
+
+    @GET("tn_pubr_public_lftm_lrn_lctre_api")
+    suspend fun getTitleData(
+        @Query("serviceKey") KEY: String,
+        @Query("pageNo") Page: Int,
+        @Query("type") Type: String = "json",
+        @Query("lctreNm") Title: String?
     ): LifelongResponse
 }

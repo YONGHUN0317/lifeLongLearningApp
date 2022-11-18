@@ -1,14 +1,21 @@
 package com.example.lifelonglearningapp
 
 
+import android.provider.DocumentsContract
+import android.text.method.TextKeyListener.clear
+import android.util.Log
+import android.widget.Toast
+import androidx.paging.PagingData
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import retrofit2.HttpException
+import timber.log.Timber
 import java.io.IOException
 import java.lang.Exception
 
 
 class SearchPagingSource(private val retrofitAPI: ApiService) : PagingSource<Int, Items>() {
+
 
     override fun getRefreshKey(state: PagingState<Int, Items>): Int? {
         return state.anchorPosition?.let { anchorPosition ->
@@ -18,27 +25,53 @@ class SearchPagingSource(private val retrofitAPI: ApiService) : PagingSource<Int
     }
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Items> {
-        return try {
+        val position = params.key ?: 1
+        lateinit var getData: LoadResult<Int, Items>
 
-            val position = params.key ?: 1
-            val response =
-                retrofitAPI.getEmgMedData(
-                    "5suQeq4QuBctnq8436EEoB1uFhgkMgC1E84bQl4TtrdWjovDg9CM0wYPJfwU+2T+zEBOkJ6foKxaTnYPPyg/dw==",
-                    position,
-                    "json"
+        var response1 = retrofitAPI.getEmgMedData(
+            "5suQeq4QuBctnq8436EEoB1uFhgkMgC1E84bQl4TtrdWjovDg9CM0wYPJfwU+2T+zEBOkJ6foKxaTnYPPyg/dw==",
+            position,
+            "json"
+        )
+        var response2 = retrofitAPI.getTitleData(
+            "5suQeq4QuBctnq8436EEoB1uFhgkMgC1E84bQl4TtrdWjovDg9CM0wYPJfwU+2T+zEBOkJ6foKxaTnYPPyg/dw==",
+            position,
+            "json",
+            SearchActivity.query
+        )
+
+
+        try {
+            if (SearchActivity.Filter == 0) {
+                getData = LoadResult.Page(
+                    data = response1.response.body.items,
+                    prevKey = if (position == 1) null else position - 1,
+                    nextKey = if (position == 2299) null else position + 1
                 )
-            return LoadResult.Page(
-                data = response.response.body.items,
-                prevKey = if (position == 1) null else position - 1,
-                nextKey = if (position == 2299) null else position + 1
-            )
-        } catch (e: IOException) {
-            LoadResult.Error(e)
-        } catch (e: HttpException) {
-            LoadResult.Error(e)
-        } catch (e: Exception) {
-            LoadResult.Error(e)
+            } else if (SearchActivity.Filter == 1) {
+                getData = LoadResult.Page(
+                    data = response2.response.body.items,
+                    prevKey = if (position == 1) null else position - 1,
+                    nextKey = if (position == (response2.response.body.totalCount.toInt() / response2.response.body.numOfRows.toInt()) + 1) null else position + 1
+                )
+                SearchActivity.Filter = 0
+            }
+        } catch (exception: IOException) {
+            // 네트워크 연결 자체를 실패한 경우 처리
+            Timber.i("IOException")
+            return LoadResult.Error(exception)
+        } catch (exception: HttpException) {
+            // http 통신중 http 오류코드(400, 403..)를 통한 처리
+            Timber.i("HttpException")
+            return LoadResult.Error(exception)
+        } catch (e : Exception){
+            Timber.i("안돼")
+        } finally {
+            if(getData == null){
+               // Toast.makeText(this,"에러","smrmaak")
+            }
         }
+        return getData
     }
 }
 
