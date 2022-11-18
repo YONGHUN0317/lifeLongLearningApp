@@ -12,6 +12,7 @@ import retrofit2.HttpException
 import timber.log.Timber
 import java.io.IOException
 import java.lang.Exception
+import java.lang.NullPointerException
 
 
 class SearchPagingSource(private val retrofitAPI: ApiService) : PagingSource<Int, Items>() {
@@ -49,6 +50,7 @@ class SearchPagingSource(private val retrofitAPI: ApiService) : PagingSource<Int
                     nextKey = if (position == 2299) null else position + 1
                 )
             } else if (SearchActivity.Filter == 1) {
+                Timber.i("Filter1")
                 getData = LoadResult.Page(
                     data = response2.response.body.items,
                     prevKey = if (position == 1) null else position - 1,
@@ -58,18 +60,16 @@ class SearchPagingSource(private val retrofitAPI: ApiService) : PagingSource<Int
             }
         } catch (exception: IOException) {
             // 네트워크 연결 자체를 실패한 경우 처리
-            Timber.i("IOException")
             return LoadResult.Error(exception)
         } catch (exception: HttpException) {
             // http 통신중 http 오류코드(400, 403..)를 통한 처리
-            Timber.i("HttpException")
+            Log.d("데이터","데이터없음")
             return LoadResult.Error(exception)
-        } catch (e : Exception){
-            Timber.i("안돼")
-        } finally {
-            if(getData == null){
-               // Toast.makeText(this,"에러","smrmaak")
-            }
+        } catch (e: NullPointerException) {
+            Log.d("데이터","데이터없음")
+            return LoadResult.Error(e)
+        } catch (e: Exception) {
+            return LoadResult.Error(e)
         }
         return getData
     }
