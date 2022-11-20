@@ -2,6 +2,7 @@ package com.example.lifelonglearningapp
 
 import android.annotation.SuppressLint
 import android.content.ContentValues.TAG
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import android.widget.Filter
 import android.widget.Filterable
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.content.ContextCompat.startActivity
 import androidx.paging.LoadState
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
@@ -20,24 +22,27 @@ import timber.log.Timber
 import java.nio.file.DirectoryStream
 import java.nio.file.Files.size
 
-class SearchPagingAdapter :
+
+class SearchPagingAdapter(private val onSelect: (Items?) -> Unit) :
     PagingDataAdapter<Items, SearchPagingAdapter.SearchViewHolder>(COMPARATOR) {
+
+
 
     inner class SearchViewHolder(private val binding: ItemSearchBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bindAdapter(item: Items) = with(binding) {
 
+
+        fun bindAdapter(item: Items) = with(binding) {
             searchTitle.text = item.lctreNm
             searchDay.text = item.edcStartDay + " ~ " + item.edcEndDay
             searchDate.text = item.operDay
-//            itemView.setOnSingleClickListener {
-//
-//            }
         }
+
     }
 
+
     override fun onBindViewHolder(holder: SearchViewHolder, position: Int) {
-        val item = getItem(position)
+        val item = getItem(position) ?: return
         item?.let { holder.bindAdapter(it) }
     }
 
@@ -47,7 +52,9 @@ class SearchPagingAdapter :
                 LayoutInflater.from(parent.context), parent, false
             )
         )
+
     }
+
 
 
 
@@ -62,7 +69,6 @@ class SearchPagingAdapter :
             }
         }
     }
-
 
 
 }

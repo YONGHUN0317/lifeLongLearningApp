@@ -77,14 +77,15 @@
         app:layout_constraintTop_toBottomOf="@+id/aftersearch_top"
         app:layout_constraintWidth_percent="1.0">
 
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:fastScrollEnabled="false"
-            android:scrollbars="vertical"
-            android:scrollbarSize="3.5dp"
             android:scrollbarFadeDuration="0"
+            android:scrollbarSize="3.5dp"
+            android:scrollbars="vertical"
+            app:fastScrollEnabled="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -92,7 +93,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0"
             tools:listitem="@layout/item_search" />
-
 
         <TextView
             android:id="@+id/errorText"
@@ -111,14 +111,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="데이터가 없습니다."
-            android:textSize="22sp"
-            android:visibility="gone"
+            android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.476"
-            tools:visibility="visible" />
+            android:visibility="gone"
+            tools:visibility="visible"/>
 
         <ProgressBar
             android:id="@+id/progressBar"
