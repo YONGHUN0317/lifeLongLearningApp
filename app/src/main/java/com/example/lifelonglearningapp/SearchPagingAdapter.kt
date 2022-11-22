@@ -1,32 +1,23 @@
 package com.example.lifelonglearningapp
 
-import android.annotation.SuppressLint
-import android.content.ContentValues.TAG
-import android.content.Intent
-import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.Filter
-import android.widget.Filterable
-import android.widget.TextView
-import android.widget.Toast
 import androidx.core.content.ContextCompat.startActivity
 import androidx.paging.LoadState
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.lifelonglearningapp.databinding.ItemSearchBinding
-import com.google.android.gms.common.util.WorkSourceUtil.size
+
 import timber.log.Timber
 import java.nio.file.DirectoryStream
 import java.nio.file.Files.size
 
 
-class SearchPagingAdapter(private val onSelect: (Items?) -> Unit) :
+class SearchPagingAdapter(clickListener: ClickListener) :
     PagingDataAdapter<Items, SearchPagingAdapter.SearchViewHolder>(COMPARATOR) {
 
-
+    private var clickListener: ClickListener = clickListener
 
     inner class SearchViewHolder(private val binding: ItemSearchBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -35,15 +26,22 @@ class SearchPagingAdapter(private val onSelect: (Items?) -> Unit) :
         fun bindAdapter(item: Items) = with(binding) {
             searchTitle.text = item.lctreNm
             searchDay.text = item.edcStartDay + " ~ " + item.edcEndDay
-            searchDate.text = item.operDay
+            searchDate.text = item.edcPlace
         }
 
     }
 
 
     override fun onBindViewHolder(holder: SearchViewHolder, position: Int) {
-        val item = getItem(position) ?: return
+        val item = getItem(position)
         item?.let { holder.bindAdapter(it) }
+        holder.itemView.setOnClickListener {
+            clickListener.clickedItem(item)
+        }
+    }
+
+    interface ClickListener{
+        fun clickedItem(item: Items?)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchViewHolder {

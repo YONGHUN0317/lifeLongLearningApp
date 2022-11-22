@@ -74,26 +74,7 @@ class SearchPagingSource(private val retrofitAPI: ApiService) : PagingSource<Int
         }
     }
 
-    public sealed class LoadState(
-        public val endOfPaginationReached: Boolean
-    ) {
 
-        public class NotLoading(
-            endOfPaginationReached: Boolean
-        ) : LoadState(endOfPaginationReached) {
-
-        }
-
-        public object Loading : LoadState(false) {
-
-        }
-
-        public class Error(
-            public val error: Throwable
-        ) : LoadState(false) {
-
-        }
-    }
 
 
 
