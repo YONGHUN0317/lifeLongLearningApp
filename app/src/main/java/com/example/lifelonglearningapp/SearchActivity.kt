@@ -89,6 +89,10 @@ class SearchActivity : AppCompatActivity(), SearchPagingAdapter.ClickListener {
             }
         }
 
+        aftersearch_arrow.setOnClickListener {
+            onBackPressed()
+        }
+
 
     }
 
@@ -151,7 +155,7 @@ class SearchActivity : AppCompatActivity(), SearchPagingAdapter.ClickListener {
         intent.putExtra("edcTrgetType", item?.edcTrgetType)
         intent.putExtra("edcMthType", item?.edcMthType)
         intent.putExtra("operDay", item?.operDay)
-        intent.putExtra("edcPlace", item?.edcPlace)
+        intent.putExtra("edcPlace", item!!.edcPlace)
         intent.putExtra("psncpa", item?.psncpa)
         intent.putExtra("lctreCost", item?.lctreCost)
         intent.putExtra("edcRdnmadr", item!!.edcRdnmadr)

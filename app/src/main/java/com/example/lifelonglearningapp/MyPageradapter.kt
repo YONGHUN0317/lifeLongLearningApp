@@ -56,4 +56,5 @@ class MyPageradapter(fa: FragmentActivity) : FragmentStateAdapter(fa) {
             }
         }
     }
+
 }

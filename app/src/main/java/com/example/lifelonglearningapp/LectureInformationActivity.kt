@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.lifelonglearningapp.databinding.ActivityAftersearchBinding
 import com.example.lifelonglearningapp.databinding.ActivityAftersearchBinding.inflate
 import com.example.lifelonglearningapp.databinding.ActivityLectureinformationBinding
-import com.naver.maps.map.NaverMap
 import kotlinx.android.synthetic.main.activity_lectureinformation.*
 import java.io.BufferedReader
 import java.io.InputStreamReader
@@ -23,9 +22,7 @@ import androidx.fragment.app.FragmentActivity
 
 import com.gun0912.tedpermission.provider.TedPermissionProvider.context
 import com.naver.maps.geometry.LatLng
-import com.naver.maps.map.CameraPosition
-import com.naver.maps.map.MapFragment
-import com.naver.maps.map.NaverMapOptions
+import com.naver.maps.map.*
 import com.naver.maps.map.overlay.Marker
 import java.util.*
 import com.naver.maps.map.overlay.OverlayImage
@@ -36,9 +33,12 @@ class LectureInformationActivity : FragmentActivity(), com.naver.maps.map.OnMapR
     private lateinit var binding: ActivityLectureinformationBinding
     lateinit var location: LatLng
     lateinit var edcRdnmadr: String
+    lateinit var edcPlace: String
     private lateinit var naverMap: NaverMap
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        NaverMapSdk.getInstance(this).client =
+            NaverMapSdk.NaverCloudPlatformClient(BuildConfig.NAVER_APIKEY)
         binding = ActivityLectureinformationBinding.inflate(layoutInflater)
         setContentView(binding.root)
         getData()
@@ -69,7 +69,7 @@ class LectureInformationActivity : FragmentActivity(), com.naver.maps.map.OnMapR
         var edcTrgetType = intent?.getString("edcTrgetType")
         var edcMthType = intent?.getString("edcMthType")
         var operDay = intent?.getString("operDay")
-        var edcPlace = intent?.getString("edcPlace")
+        edcPlace = intent?.getString("edcPlace").toString()
         var psncpa = intent?.getString("psncpa")
         var lctreCost = intent?.getString("lctreCost")
         edcRdnmadr = intent?.getString("edcRdnmadr").toString()
@@ -111,7 +111,7 @@ class LectureInformationActivity : FragmentActivity(), com.naver.maps.map.OnMapR
     @UiThread
     override fun onMapReady(naverMap: NaverMap) {
         this.naverMap = naverMap
-        val uiSettings = naverMap.uiSettings
+
 
         val cameraPosition = CameraPosition(
             location,  // 위치 지정
@@ -121,8 +121,9 @@ class LectureInformationActivity : FragmentActivity(), com.naver.maps.map.OnMapR
         naverMap.setCameraPosition(cameraPosition)
         naverMap.setLayerGroupEnabled(NaverMap.LAYER_GROUP_BUILDING, true);
 
-        uiSettings.isZoomControlEnabled = true
+
         val marker = Marker()
+        marker.captionText = edcPlace
         marker.position = location
         marker.map = naverMap
     }

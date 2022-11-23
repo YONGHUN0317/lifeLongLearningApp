@@ -22,7 +22,10 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         // url 변수 지정
-        buildConfigField "String", "API_KEY", properties['api.key']
+        buildConfigField "String", "PUBLIC_APIKEY", properties['public_apikey']
+        buildConfigField "String", "GEO_APIKEY", properties['geo_apikey']
+        buildConfigField "String", "NAVER_APIKEY", properties['naver_apikey']
+
     }
 
     buildTypes {

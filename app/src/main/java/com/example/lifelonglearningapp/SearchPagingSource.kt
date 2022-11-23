@@ -4,6 +4,7 @@ package com.example.lifelonglearningapp
 import android.provider.DocumentsContract
 import android.text.method.TextKeyListener.clear
 import android.util.Log
+import com.example.lifelonglearningapp.BuildConfig
 import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.paging.PagingData
@@ -32,12 +33,12 @@ class SearchPagingSource(private val retrofitAPI: ApiService) : PagingSource<Int
         lateinit var getData: LoadResult<Int, Items>
 
         var response1 = retrofitAPI.getEmgMedData(
-            "5suQeq4QuBctnq8436EEoB1uFhgkMgC1E84bQl4TtrdWjovDg9CM0wYPJfwU+2T+zEBOkJ6foKxaTnYPPyg/dw==",
+            BuildConfig.PUBLIC_APIKEY,
             position,
             "json"
         )
         var response2 = retrofitAPI.getTitleData(
-            "5suQeq4QuBctnq8436EEoB1uFhgkMgC1E84bQl4TtrdWjovDg9CM0wYPJfwU+2T+zEBOkJ6foKxaTnYPPyg/dw==",
+            BuildConfig.PUBLIC_APIKEY,
             position,
             "json",
             SearchActivity.query

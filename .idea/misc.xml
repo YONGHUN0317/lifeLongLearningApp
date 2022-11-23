@@ -10,7 +10,9 @@
         <entry key="..\:/Users/YONGHUN/AndroidStudioProjects/lifelongLearningApp/app/src/main/res/drawable/failed.xml" value="0.33229166666666665" />
         <entry key="..\:/Users/YONGHUN/AndroidStudioProjects/lifelongLearningApp/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.3171052631578947" />
         <entry key="..\:/Users/YONGHUN/AndroidStudioProjects/lifelongLearningApp/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.3171052631578947" />
+        <entry key="..\:/Users/YONGHUN/AndroidStudioProjects/lifelongLearningApp/app/src/main/res/drawable/ic_launcher.xml" value="0.3307291666666667" />
         <entry key="..\:/Users/YONGHUN/AndroidStudioProjects/lifelongLearningApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3765625" />
+        <entry key="..\:/Users/YONGHUN/AndroidStudioProjects/lifelongLearningApp/app/src/main/res/drawable/lifelong_background.xml" value="0.3765625" />
         <entry key="..\:/Users/YONGHUN/AndroidStudioProjects/lifelongLearningApp/app/src/main/res/drawable/magnifyingglass.xml" value="0.3765625" />
         <entry key="..\:/Users/YONGHUN/AndroidStudioProjects/lifelongLearningApp/app/src/main/res/drawable/main.xml" value="0.33229166666666665" />
         <entry key="..\:/Users/YONGHUN/AndroidStudioProjects/lifelongLearningApp/app/src/main/res/drawable/main_rectangle.xml" value="0.3171052631578947" />
@@ -32,8 +34,8 @@
         <entry key="..\:/Users/YONGHUN/AndroidStudioProjects/lifelongLearningApp/app/src/main/res/layout-v31/activity_splash.xml" value="0.25" />
         <entry key="..\:/Users/YONGHUN/AndroidStudioProjects/lifelongLearningApp/app/src/main/res/layout-v31/splash.xml" value="0.22" />
         <entry key="..\:/Users/YONGHUN/AndroidStudioProjects/lifelongLearningApp/app/src/main/res/layout/activity_aftersearch.xml" value="0.33" />
-        <entry key="..\:/Users/YONGHUN/AndroidStudioProjects/lifelongLearningApp/app/src/main/res/layout/activity_lectureinformation.xml" value="0.25" />
-        <entry key="..\:/Users/YONGHUN/AndroidStudioProjects/lifelongLearningApp/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/YONGHUN/AndroidStudioProjects/lifelongLearningApp/app/src/main/res/layout/activity_lectureinformation.xml" value="0.22" />
+        <entry key="..\:/Users/YONGHUN/AndroidStudioProjects/lifelongLearningApp/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/YONGHUN/AndroidStudioProjects/lifelongLearningApp/app/src/main/res/layout/activity_map.xml" value="0.225" />
         <entry key="..\:/Users/YONGHUN/AndroidStudioProjects/lifelongLearningApp/app/src/main/res/layout/activity_search.xml" value="0.33" />
         <entry key="..\:/Users/YONGHUN/AndroidStudioProjects/lifelongLearningApp/app/src/main/res/layout/activity_splash_screen.xml" value="0.2" />
@@ -60,6 +62,8 @@
         <entry key="..\:/Users/YONGHUN/AndroidStudioProjects/lifelongLearningApp/app/src/main/res/layout/item_search.xml" value="0.75" />
         <entry key="..\:/Users/YONGHUN/AndroidStudioProjects/lifelongLearningApp/app/src/main/res/layout/splash.xml" value="0.25" />
         <entry key="..\:/Users/YONGHUN/AndroidStudioProjects/lifelongLearningApp/app/src/main/res/layout/test1.xml" value="0.3" />
+        <entry key="..\:/Users/YONGHUN/AndroidStudioProjects/lifelongLearningApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/YONGHUN/AndroidStudioProjects/lifelongLearningApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.20416666666666666" />
       </map>
     </option>
   </component>

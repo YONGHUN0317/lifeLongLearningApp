@@ -9,21 +9,14 @@
         android:name=".LifelongApp"
         android:allowBackup="true"
         android:usesCleartextTraffic="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:icon="@mipmap/lifelong"
+        android:label="평생교육강좌찾기"
+        android:roundIcon="@mipmap/lifelong"
         android:supportsRtl="true"
         android:theme="@style/Theme.LifelongLearningApp"
         >
 
-        <meta-data
-            android:name="com.google.android.geo.API.KEY"
-            android:value="AIzaSyARb2vSaOD4Y49muMWzlQ4HVt3VKdQWVag"
 
-            />
-        <meta-data
-            android:name="com.naver.maps.map.CLIENT_ID"
-            android:value="sux2xu5d7l" />
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true"
