@@ -119,32 +119,6 @@ class SearchActivity : AppCompatActivity(), SearchPagingAdapter.ClickListener {
 
         val intent = Intent(this, LectureInformationActivity::class.java)
 
-//        var bundle = Bundle()
-//        bundle.putString("lctreNm", item?.lctreNm)
-//        bundle.putString("instrctrNm", item?.instrctrNm)
-//        bundle.putString("edcStartDay", item?.edcStartDay)
-//        bundle.putString("edcEndDay", item?.edcEndDay)
-//        bundle.putString("edcStartTime", item?.edcStartTime)
-//        bundle.putString("edcColseTime", item?.edcColseTime)
-//        bundle.putString("lctreCo", item?.lctreCo)
-//        bundle.putString("edcTrgetType", item?.edcTrgetType)
-//        bundle.putString("edcMthType", item?.edcMthType)
-//        bundle.putString("operDay", item?.operDay)
-//        bundle.putString("edcPlace", item?.edcPlace)
-//        bundle.putString("psncpa", item?.psncpa)
-//        bundle.putString("lctreCost", item?.lctreCost)
-//        bundle.putString("edcRdnmadr", item?.edcRdnmadr)
-//        bundle.putString("operInstitutionNm", item?.operInstitutionNm)
-//        bundle.putString("operPhoneNumber", item?.operPhoneNumber)
-//        bundle.putString("rceptStartDate", item?.rceptStartDate)
-//        bundle.putString("rceptEndDate", item?.rceptEndDate)
-//        bundle.putString("slctnMthType", item?.slctnMthType)
-//        bundle.putString("homepageUrl", item?.homepageUrl)
-//        bundle.putString("pntBankAckestYn", item?.pntBankAckestYn)
-//        bundle.putString("lrnAcnutAckestYn", item?.lrnAcnutAckestYn)
-//        bundle.putString("referenceDate", item?.referenceDate)
-//        bundle.putString("insttCode", item?.insttCode)
-//        bundle.putString("oadtCtLctreYn", item?.oadtCtLctreYn)
         intent.putExtra("lctreNm", item?.lctreNm)
         intent.putExtra("instrctrNm", item?.instrctrNm)
         intent.putExtra("edcStartDay", item?.edcStartDay)
@@ -170,13 +144,6 @@ class SearchActivity : AppCompatActivity(), SearchPagingAdapter.ClickListener {
         intent.putExtra("referenceDate", item?.referenceDate)
         intent.putExtra("insttCode", item?.insttCode)
         intent.putExtra("oadtCtLctreYn", item?.oadtCtLctreYn)
-
-//        val locationFragment = LocationFragment()
-//        locationFragment.arguments = bundle
-//
-//        val transaction = supportFragmentManager.beginTransaction()
-//        transaction.add(R.id.frameLayout, locationFragment)
-//        transaction.commit()
 
         startActivity(intent)
     }

@@ -13,10 +13,10 @@ class MyPageradapter(fa: FragmentActivity) : FragmentStateAdapter(fa) {
     override fun createFragment(position: Int): Fragment {
         return when (position) {
             0 -> {
-                MainLecture.newInstance("page1", "adff", "cdff", "ddasf", "fasdf", "gafd")
+                MainLecture.newInstance("흉노·돌궐과비잔틴·오스만제국을 계승한, 터키", "김시열", "2022-06-02 ~ 2022-08-24", "10:00 ~12:00", "30000", "서초구 평생학습관")
             }
             1 -> {
-                MainLecture.newInstance("page2", "a", "c", "d", "f", "g")
+                MainLecture.newInstance("취미사진가를 위한 사진<교육장소:정록카페>", "김태훈(사진작가)", "c", "d", "f", "g")
             }
             2 -> {
                 MainLecture.newInstance("page3", "a", "c", "d", "f", "g")

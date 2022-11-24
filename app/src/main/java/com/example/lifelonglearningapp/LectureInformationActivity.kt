@@ -1,6 +1,7 @@
 package com.example.lifelonglearningapp
 
 import android.app.Activity
+import android.content.Intent
 import android.location.Address
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -16,6 +17,7 @@ import java.net.HttpURLConnection
 import java.net.URL
 import java.net.URLEncoder
 import android.location.Geocoder
+import android.net.Uri
 import android.util.Log
 import androidx.annotation.UiThread
 import androidx.fragment.app.FragmentActivity
@@ -34,6 +36,7 @@ class LectureInformationActivity : FragmentActivity(), com.naver.maps.map.OnMapR
     lateinit var location: LatLng
     lateinit var edcRdnmadr: String
     lateinit var edcPlace: String
+    lateinit var operPhoneNumber: String
     private lateinit var naverMap: NaverMap
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,6 +47,19 @@ class LectureInformationActivity : FragmentActivity(), com.naver.maps.map.OnMapR
         getData()
         location = getLatLng(edcRdnmadr!!)
         init()
+
+        textview_operPhoneNumber.setOnClickListener {
+            val dialIntent = Intent(Intent.ACTION_DIAL)
+            dialIntent.data = Uri.parse("tel:" + operPhoneNumber)
+            startActivity(dialIntent)
+        }
+
+        textview_homepageUrl.setOnClickListener {
+            var homepage = Intent(
+                Intent.ACTION_VIEW, Uri.parse(textview_homepageUrl.text.toString()))
+            startActivity(homepage)
+
+        }
     }
 
     fun init() {
@@ -74,7 +90,7 @@ class LectureInformationActivity : FragmentActivity(), com.naver.maps.map.OnMapR
         var lctreCost = intent?.getString("lctreCost")
         edcRdnmadr = intent?.getString("edcRdnmadr").toString()
         var operInstitutionNm = intent?.getString("operInstitutionNm")
-        var operPhoneNumber = intent?.getString("operPhoneNumber")
+        operPhoneNumber = intent?.getString("operPhoneNumber").toString()
         var rceptStartDate = intent?.getString("rceptStartDate")
         var rceptEndDate = intent?.getString("rceptEndDate")
         var rceptMthType = intent?.getString("rceptMthType")
@@ -104,6 +120,7 @@ class LectureInformationActivity : FragmentActivity(), com.naver.maps.map.OnMapR
         textview_pntBankAckestYn.text = pntBankAckestYn
         textview_lrnAcnutAckestYn.text = lrnAcnutAckestYn
         textview_referenceDate.text = referenceDate
+        textview_homepageUrl.text = homepageUrl
 
     }
 
