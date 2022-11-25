@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
             adapter = MyPageradapter(context as FragmentActivity)
         }
 
-        val tabElement: List<String> = Arrays.asList("서울", "경기도", "인천","충청도", "강원도", "세종","대전", "경상도","대구","울산","부산","전라도","광주","제주도")
+        val tabElement: List<String> = Arrays.asList("서울", "경기도", "인천","충청도", "강원도", "대전", "경상도","대구","울산","부산","전라도","광주","제주도")
 
         TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
             tab.text = "${tabElement.get(position)}"
