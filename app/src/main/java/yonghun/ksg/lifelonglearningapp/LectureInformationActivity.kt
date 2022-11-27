@@ -1,37 +1,24 @@
-package com.example.lifelonglearningapp
+package yonghun.ksg.lifelonglearningapp
 
-import android.app.Activity
 import android.content.Intent
-import android.location.Address
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import com.example.lifelonglearningapp.databinding.ActivityAftersearchBinding
-import com.example.lifelonglearningapp.databinding.ActivityAftersearchBinding.inflate
-import com.example.lifelonglearningapp.databinding.ActivityLectureinformationBinding
+import yonghun.ksg.lifelonglearningapp.databinding.ActivityLectureinformationBinding
 import kotlinx.android.synthetic.main.activity_lectureinformation.*
-import java.io.BufferedReader
-import java.io.InputStreamReader
-import java.lang.Exception
-import java.lang.StringBuilder
-import java.net.HttpURLConnection
-import java.net.URL
-import java.net.URLEncoder
 import android.location.Geocoder
 import android.net.Uri
 import android.util.Log
 import androidx.annotation.UiThread
 import androidx.fragment.app.FragmentActivity
 
+
 import com.gun0912.tedpermission.provider.TedPermissionProvider.context
 import com.naver.maps.geometry.LatLng
 import com.naver.maps.map.*
 import com.naver.maps.map.overlay.Marker
 import java.util.*
-import com.naver.maps.map.overlay.OverlayImage
-import com.naver.maps.map.widget.ZoomControlView
 
 
-class LectureInformationActivity : FragmentActivity(), com.naver.maps.map.OnMapReadyCallback {
+class LectureInformationActivity : FragmentActivity(), OnMapReadyCallback {
     private lateinit var binding: ActivityLectureinformationBinding
     lateinit var location: LatLng
     lateinit var edcRdnmadr: String
@@ -95,7 +82,7 @@ class LectureInformationActivity : FragmentActivity(), com.naver.maps.map.OnMapR
         var rceptEndDate = intent?.getString("rceptEndDate")
         var rceptMthType = intent?.getString("rceptMthType")
         var slctnMthType = intent?.getString("slctnMthType")
-        var homepageUrl = intent?.getString("homepageUrl")
+        var homepageUrl = intent?.getString("homepageUrl").toString()
         var pntBankAckestYn = intent?.getString("pntBankAckestYn")
         var lrnAcnutAckestYn = intent?.getString("lrnAcnutAckestYn")
         var referenceDate = intent?.getString("referenceDate")
@@ -111,16 +98,22 @@ class LectureInformationActivity : FragmentActivity(), com.naver.maps.map.OnMapR
         textview_edcPlace.text = edcPlace
         textview_operPhoneNumber.text = operPhoneNumber
         textview_edcTrgetType.text = edcTrgetType
-        lecture_date.text = edcStartDay + " ~ " + edcEndDay
+        textview_edcStartDay.text = edcStartDay + " ~ " + edcEndDay
         textview_operDay.text = operDay
         textview_time.text = edcStartTime + " ~ " + edcColseTime
         lecture_content.text = lctreCo
+        textview_rceptStartDate.text = rceptStartDate + " ~ " + rceptEndDate
         textview_instrctrNm.text = instrctrNm
         textview_oadtCtLctreYn.text = oadtCtLctreYn
         textview_pntBankAckestYn.text = pntBankAckestYn
         textview_lrnAcnutAckestYn.text = lrnAcnutAckestYn
         textview_referenceDate.text = referenceDate
-        textview_homepageUrl.text = homepageUrl
+        if(homepageUrl.contains("/")){
+            textview_homepageUrl.text = homepageUrl
+        }else{
+            textview_homepageUrl.text = "https://" + homepageUrl
+        }
+
 
     }
 

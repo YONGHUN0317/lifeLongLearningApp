@@ -1,5 +1,4 @@
-package com.example.lifelonglearningapp
-import androidx.lifecycle.MutableLiveData
+package yonghun.ksg.lifelonglearningapp
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.cachedIn

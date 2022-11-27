@@ -1,4 +1,4 @@
-package com.example.lifelonglearningapp
+package yonghun.ksg.lifelonglearningapp
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName

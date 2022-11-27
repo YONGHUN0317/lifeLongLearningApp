@@ -1,42 +1,25 @@
-package com.example.lifelonglearningapp
+package yonghun.ksg.lifelonglearningapp
 
 
-import android.content.ContentValues.TAG
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.method.TextKeyListener.clear
-import android.text.style.BulletSpan
 import android.util.Log
-import android.widget.TextView
-import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.lifelonglearningapp.databinding.ActivityAftersearchBinding
+import yonghun.ksg.lifelonglearningapp.databinding.ActivityAftersearchBinding
 import androidx.appcompat.widget.SearchView
 import androidx.core.view.isVisible
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.lifecycleScope
-import androidx.lifecycle.viewmodel.viewModelFactory
-import androidx.paging.CombinedLoadStates
 import androidx.paging.LoadState
-import androidx.paging.PagingDataAdapter
-import coil.util.CoilUtils.clear
+import yonghun.ksg.lifelonglearningapp.R
 
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_aftersearch.*
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.newFixedThreadPoolContext
-import java.nio.file.Files.size
 
 @AndroidEntryPoint
 class SearchActivity : AppCompatActivity(), SearchPagingAdapter.ClickListener {

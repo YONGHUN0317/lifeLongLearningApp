@@ -1,6 +1,5 @@
-package com.example.lifelonglearningapp
+package yonghun.ksg.lifelonglearningapp
 
-import android.util.Log
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.liveData

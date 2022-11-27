@@ -1,7 +1,4 @@
-package com.example.lifelonglearningapp
-
-import com.google.gson.annotations.Expose
-import com.google.gson.annotations.SerializedName
+package yonghun.ksg.lifelonglearningapp
 
 data class MainLectureInfo(
     val lctreNm: String ,

@@ -1,4 +1,4 @@
-package com.example.lifelonglearningapp
+package yonghun.ksg.lifelonglearningapp
 
 import org.junit.Test
 

@@ -1,16 +1,13 @@
-package com.example.lifelonglearningapp
+package yonghun.ksg.lifelonglearningapp
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.lifelonglearningapp.databinding.FragmentMainLectureBinding
+import yonghun.ksg.lifelonglearningapp.databinding.FragmentMainLectureBinding
 import kotlinx.android.synthetic.main.fragment_main_lecture.*
 import android.content.Intent
-import com.google.gson.annotations.Expose
-import com.google.gson.annotations.SerializedName
 import kotlinx.android.synthetic.main.activity_main.*
 
 private const val ARG_PARAM1 = "title"
@@ -577,7 +574,7 @@ class MainLecture : Fragment() {
         "2022-01-11",
         "?",
         "온라인",
-        "컴퓨터 추첨", "edu.uiwang.go.kr", "?", "?", "?", "2022-11-23", "4860000"
+        "컴퓨터 추첨", "https://edu.uiwang.go.kr/", "?", "?", "?", "2022-11-23", "4860000"
     )
     val mainLectureInfo3 = MainLectureInfo(
         "[구민제안프로그램]금융사기예방 연극 네 놈 목소리",
@@ -621,7 +618,7 @@ class MainLecture : Fragment() {
         "2022-03-30",
         "2022-04-06",
         "인터넷 접수",
-        "추첨제", "www.buyeo.go.kr/html/lll", "N", "N", "N", "2022-11-16", "4860000"
+        "추첨제", "http://www.buyeo.go.kr/html/lll", "N", "N", "N", "2022-11-16", "4860000"
     )
     val mainLectureInfo5 = MainLectureInfo(
         "힐링테라피 손글씨&캘리그라피",
@@ -643,7 +640,7 @@ class MainLecture : Fragment() {
         "2022-08-03",
         "2022-08-12",
         "인터넷",
-        "선착순", "www.taebaek.go.kr", "N", "N", "N", "2022-11-18", "4860000"
+        "선착순", "http://www.taebaek.go.kr", "N", "N", "N", "2022-11-18", "4860000"
     )
     val mainLectureInfo6 = MainLectureInfo(
         "스마트폰배우기(아이폰제외)",
@@ -715,7 +712,7 @@ class MainLecture : Fragment() {
         "2022-11-17",
         "2022-11-24",
         "인터넷",
-        "선착순", "lll.suseong.kr", "N", "N", "N", "2022-11-07", "4860000"
+        "선착순", "http://lll.suseong.kr", "N", "N", "N", "2022-11-07", "4860000"
     )
     val mainLectureInfo9 = MainLectureInfo(
         "처음부터 배워보는 홈패션(재봉틀)",
@@ -781,7 +778,7 @@ class MainLecture : Fragment() {
         "2022-01-02",
         "2022-12-20",
         "전화접수",
-        "선착순", "www.iksan.go.kr/lll", "N", "N", "N", "2022-09-15", "4860000"
+        "선착순", "http://www.iksan.go.kr/lll", "N", "N", "N", "2022-09-15", "4860000"
     )
     val mainLectureInfo12 = MainLectureInfo(
         "산야초를 이용한클랜징폼만들기",

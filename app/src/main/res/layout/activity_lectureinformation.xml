@@ -30,7 +30,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="350dp"
 
-                />
+                >
+
+            </com.naver.maps.map.MapView>
+
+
 
             <TextView
                 android:id="@+id/textview_lctrNm"
@@ -143,6 +147,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="교육방법구분"
+
+
                     android:textColor="#848484"
                     android:textSize="13sp" />
             </LinearLayout>
@@ -151,6 +157,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="5dp"
+
                 android:orientation="horizontal"
                 android:layout_marginStart="19dp">
 
@@ -272,7 +279,7 @@
                 android:layout_marginStart="19dp"/>
 
             <TextView
-                android:id="@+id/textView18"
+                android:id="@+id/textView40"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -282,7 +289,28 @@
                 android:layout_marginStart="19dp"/>
 
             <TextView
-                android:id="@+id/lecture_date"
+                android:id="@+id/textview_rceptStartDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="2022-02-07 ~ 2022-02-18"
+                android:ellipsize="end"
+                android:textColor="#000000"
+                android:textSize="17sp"
+                android:layout_marginStart="19dp"/>
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="교육날짜"
+                android:textSize="13sp"
+                android:textColor="#848484"
+                android:layout_marginStart="19dp"/>
+
+            <TextView
+                android:id="@+id/textview_edcStartDay"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"

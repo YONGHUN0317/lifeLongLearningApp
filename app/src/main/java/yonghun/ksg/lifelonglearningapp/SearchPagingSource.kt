@@ -1,20 +1,11 @@
-package com.example.lifelonglearningapp
+package yonghun.ksg.lifelonglearningapp
 
 
-import android.provider.DocumentsContract
-import android.text.method.TextKeyListener.clear
 import android.util.Log
-import com.example.lifelonglearningapp.BuildConfig
-import android.widget.Toast
-import androidx.core.view.isVisible
-import androidx.paging.PagingData
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import kotlinx.android.synthetic.main.activity_aftersearch.*
 import retrofit2.HttpException
-import timber.log.Timber
 import java.io.IOException
-import java.lang.Exception
 import java.lang.NullPointerException
 
 

@@ -45,7 +45,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.52"
             app:queryBackground="@drawable/main_search"
-            app:queryHint=" 검색"
+            app:queryHint=" ex)영어회화"
 
             />
 

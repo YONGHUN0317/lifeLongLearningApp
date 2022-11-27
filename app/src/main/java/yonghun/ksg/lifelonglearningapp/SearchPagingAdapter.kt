@@ -1,17 +1,11 @@
-package com.example.lifelonglearningapp
+package yonghun.ksg.lifelonglearningapp
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat.startActivity
-import androidx.paging.LoadState
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.example.lifelonglearningapp.databinding.ItemSearchBinding
-
-import timber.log.Timber
-import java.nio.file.DirectoryStream
-import java.nio.file.Files.size
+import yonghun.ksg.lifelonglearningapp.databinding.ItemSearchBinding
 
 
 class SearchPagingAdapter(clickListener: ClickListener) :

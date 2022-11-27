@@ -1,4 +1,4 @@
-package com.example.lifelonglearningapp
+package yonghun.ksg.lifelonglearningapp
 
 import retrofit2.http.GET
 import retrofit2.http.Query

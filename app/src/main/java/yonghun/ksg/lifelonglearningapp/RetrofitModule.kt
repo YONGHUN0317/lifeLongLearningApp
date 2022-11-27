@@ -1,7 +1,5 @@
-package com.example.lifelonglearningapp
-import com.example.lifelonglearningapp.Constants.BASE_URL
-import com.google.gson.Gson
-import com.google.gson.GsonBuilder
+package yonghun.ksg.lifelonglearningapp
+import yonghun.ksg.lifelonglearningapp.Constants.BASE_URL
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

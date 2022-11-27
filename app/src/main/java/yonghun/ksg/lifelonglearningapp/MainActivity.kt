@@ -1,12 +1,14 @@
-package com.example.lifelonglearningapp
+package yonghun.ksg.lifelonglearningapp
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.ActionBar
 import androidx.fragment.app.FragmentActivity
-import com.example.lifelonglearningapp.databinding.ActivityMainBinding
+import yonghun.ksg.lifelonglearningapp.R
+import yonghun.ksg.lifelonglearningapp.databinding.ActivityMainBinding
 import com.google.android.material.tabs.TabLayoutMediator
+import com.gun0912.tedpermission.provider.TedPermissionProvider.context
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 
@@ -34,6 +36,10 @@ class MainActivity : AppCompatActivity() {
 
         // 메인 검색 선택 시 이벤트 설정
         search_image.setOnClickListener {
+            val intent = Intent(this, SearchActivity::class.java)
+            startActivity(intent)
+        }
+        seeall.setOnClickListener{
             val intent = Intent(this, SearchActivity::class.java)
             startActivity(intent)
         }

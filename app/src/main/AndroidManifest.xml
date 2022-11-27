@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.lifelonglearningapp">
+    package="yonghun.ksg.lifelonglearningapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
 
     <application
-        android:name=".LifelongApp"
+        android:name="yonghun.ksg.lifelonglearningapp.LifelongApp"
         android:allowBackup="true"
         android:usesCleartextTraffic="true"
         android:icon="@mipmap/lifelong"
@@ -16,9 +16,8 @@
         android:theme="@style/Theme.LifelongLearningApp"
         >
 
-
         <activity
-            android:name=".SplashScreenActivity"
+            android:name="yonghun.ksg.lifelonglearningapp.SplashScreenActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
@@ -27,15 +26,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name="yonghun.ksg.lifelonglearningapp.MainActivity"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name=".LectureInformationActivity"
+            android:name="yonghun.ksg.lifelonglearningapp.LectureInformationActivity"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name=".SearchActivity"
+            android:name="yonghun.ksg.lifelonglearningapp.SearchActivity"
             android:exported="false"
             android:theme="@style/afterSearch" />
 
