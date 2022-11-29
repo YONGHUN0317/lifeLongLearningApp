@@ -1,5 +1,8 @@
 # lifelongLearningApp
 
+
+![splash](https://user-images.githubusercontent.com/50226372/204412178-4a75df73-b2e5-43b9-b708-60340fd251ce.png)
+
 - **사용대상** 
 평생 학습 강좌에 관심이 있는 사람들
 - **문제의식**
