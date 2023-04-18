@@ -17,124 +17,115 @@ import androidx.paging.LoadState
 import yonghun.ksg.lifelonglearningapp.R
 
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.activity_aftersearch.*
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class SearchActivity : AppCompatActivity(), SearchPagingAdapter.ClickListener {
 
-    lateinit var searchViewModel: SearchViewModel
-    lateinit var recyclerView: RecyclerView
-    lateinit var adapter: SearchPagingAdapter
-    lateinit var searchView: SearchView
+    private lateinit var searchViewModel: SearchViewModel
     private lateinit var binding: ActivityAftersearchBinding
+
+    private val adapter: SearchPagingAdapter by lazy { SearchPagingAdapter(this) }
+
+    companion object {
+        var inputTitle: String? = null
+        var FILTER = "SHOW_ALL"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAftersearchBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        viewModel()
+        setupViewModel()
+        setupRecyclerView()
+        setupSearchView()
+        observeLoadState()
 
+        binding.aftersearchArrow.setOnClickListener {
+            onBackPressedDispatcher.onBackPressed()
+        }
+    }
 
-        searchView = findViewById(R.id.search_view)
-        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+    private fun setupViewModel() {
+        searchViewModel = ViewModelProvider(this).get(SearchViewModel::class.java)
+        searchViewModel.list.observe(this, Observer {
+            adapter.submitData(lifecycle, it)
+        })
+    }
+
+    private fun setupRecyclerView() {
+        with(binding.recyclerView) {
+            layoutManager = LinearLayoutManager(this@SearchActivity)
+            setHasFixedSize(true)
+            adapter = this@SearchActivity.adapter
+        }
+    }
+
+    private fun setupSearchView() {
+        binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextChange(newText: String?): Boolean {
                 return true
             }
 
             override fun onQueryTextSubmit(title: String?): Boolean {
-
-
-                adapter.refresh()
-                errorText.isVisible = false
-                Log.d("텍스트제출", "텍스트제출")
-                query = title
-                Filter = 1
-                viewModel()
-                lifecycleScope.launch {
-                    adapter.loadStateFlow.collectLatest { loadStates ->
-                        //progressBar.isVisible = loadStates.source.refresh is LoadState.Loading
-                        // 로딩 에러 발생 시
-                        errorText.isVisible = loadStates.source.refresh is LoadState.Error
-                    }
+                inputTitle = title
+                if (!title.isNullOrBlank()) {
+                    FILTER = "SEARCH"
+                } else {
+                    FILTER = "SHOW_ALL"
                 }
+                adapter.refresh()
+                binding.errorText.isVisible = false
+                observeLoadState()
                 return true
             }
-        })
 
+        })
+    }
+
+    private fun observeLoadState() {
         lifecycleScope.launch {
             adapter.loadStateFlow.collectLatest { loadStates ->
-                progressBar.isVisible = loadStates.source.refresh is LoadState.Loading
-                // 로딩 에러 발생 시
-                errorText.isVisible = loadStates.source.refresh is LoadState.Error
+                binding.progressBar.isVisible = loadStates.source.refresh is LoadState.Loading
+                binding.errorText.isVisible = loadStates.source.refresh is LoadState.Error
+                Log.d("LoadState", "Load state updated: $loadStates")
             }
         }
-
-        aftersearch_arrow.setOnClickListener {
-            onBackPressed()
-        }
-
-
-    }
-
-    companion object {
-        var query: String? = null
-        var Filter: Int = 0
-
-    }
-
-    fun viewModel() {
-        recyclerView = findViewById(R.id.recyclerView)
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.setHasFixedSize(true)
-        adapter = SearchPagingAdapter(this)
-        recyclerView.adapter = adapter
-        searchViewModel = ViewModelProvider(this).get(SearchViewModel::class.java)
-        searchViewModel.list.observe(this, Observer {
-            adapter.submitData(lifecycle, it)
-        })
-
     }
 
     override fun clickedItem(item: Items?) {
-
-        val intent = Intent(this, LectureInformationActivity::class.java)
-
-        intent.putExtra("lctreNm", item?.lctreNm)
-        intent.putExtra("instrctrNm", item?.instrctrNm)
-        intent.putExtra("edcStartDay", item?.edcStartDay)
-        intent.putExtra("edcEndDay", item?.edcEndDay)
-        intent.putExtra("edcStartTime", item?.edcStartTime)
-        intent.putExtra("edcColseTime", item?.edcColseTime)
-        intent.putExtra("lctreCo", item?.lctreCo)
-        intent.putExtra("edcTrgetType", item?.edcTrgetType)
-        intent.putExtra("edcMthType", item?.edcMthType)
-        intent.putExtra("operDay", item?.operDay)
-        intent.putExtra("edcPlace", item!!.edcPlace)
-        intent.putExtra("psncpa", item?.psncpa)
-        intent.putExtra("lctreCost", item?.lctreCost)
-        intent.putExtra("edcRdnmadr", item!!.edcRdnmadr)
-        intent.putExtra("operInstitutionNm", item?.operInstitutionNm)
-        intent.putExtra("operPhoneNumber", item?.operPhoneNumber)
-        intent.putExtra("rceptStartDate", item?.rceptStartDate)
-        intent.putExtra("rceptEndDate", item?.rceptEndDate)
-        intent.putExtra("slctnMthType", item?.slctnMthType)
-        intent.putExtra("homepageUrl", item?.homepageUrl)
-        intent.putExtra("pntBankAckestYn", item?.pntBankAckestYn)
-        intent.putExtra("lrnAcnutAckestYn", item?.lrnAcnutAckestYn)
-        intent.putExtra("referenceDate", item?.referenceDate)
-        intent.putExtra("insttCode", item?.insttCode)
-        intent.putExtra("oadtCtLctreYn", item?.oadtCtLctreYn)
-
-        startActivity(intent)
+        item?.let {
+            val intent = Intent(this, LectureInformationActivity::class.java)
+            with(intent) {
+                putExtra("lctreNm", it.lctreNm)
+                putExtra("instrctrNm", it.instrctrNm)
+                putExtra("edcStartDay", it.edcStartDay)
+                putExtra("edcEndDay", it.edcEndDay)
+                putExtra("edcStartTime", it.edcStartTime)
+                putExtra("edcColseTime", it.edcColseTime)
+                putExtra("lctreCo", it.lctreCo)
+                putExtra("edcTrgetType", it.edcTrgetType)
+                putExtra("edcMthType", it.edcMthType)
+                putExtra("operDay", it.operDay)
+                putExtra("edcPlace", it.edcPlace)
+                putExtra("psncpa", it.psncpa)
+                putExtra("lctreCost", it.lctreCost)
+                putExtra("edcRdnmadr", it.edcRdnmadr)
+                putExtra("operInstitutionNm", it.operInstitutionNm)
+                putExtra("operPhoneNumber", it.operPhoneNumber)
+                putExtra("rceptStartDate", it.rceptStartDate)
+                putExtra("rceptEndDate", it.rceptEndDate)
+                putExtra("slctnMthType", it.slctnMthType)
+                putExtra("homepageUrl", it.homepageUrl)
+                putExtra("pntBankAckestYn", it.pntBankAckestYn)
+                putExtra("lrnAcnutAckestYn", it.lrnAcnutAckestYn)
+                putExtra("referenceDate", it.referenceDate)
+                putExtra("insttCode", it.insttCode)
+                putExtra("oadtCtLctreYn", it.oadtCtLctreYn)
+            }
+            startActivity(intent)
+        }
     }
 }
-
-
-
-
-
-
-

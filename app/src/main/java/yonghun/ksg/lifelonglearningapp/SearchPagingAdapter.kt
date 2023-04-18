@@ -44,7 +44,6 @@ class SearchPagingAdapter(clickListener: ClickListener) :
                 LayoutInflater.from(parent.context), parent, false
             )
         )
-
     }
 
 
@@ -61,6 +60,4 @@ class SearchPagingAdapter(clickListener: ClickListener) :
             }
         }
     }
-
-
 }

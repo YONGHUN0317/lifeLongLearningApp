@@ -1,6 +1,5 @@
 package yonghun.ksg.lifelonglearningapp
 
-
 import android.util.Log
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
@@ -8,9 +7,9 @@ import retrofit2.HttpException
 import java.io.IOException
 import java.lang.NullPointerException
 
-
-class SearchPagingSource(private val retrofitAPI: ApiService) : PagingSource<Int, Items>() {
-
+class SearchPagingSource(
+    private val retrofitAPI: ApiService
+) : PagingSource<Int, Items>() {
 
     override fun getRefreshKey(state: PagingState<Int, Items>): Int? {
         return state.anchorPosition?.let { anchorPosition ->
@@ -19,58 +18,47 @@ class SearchPagingSource(private val retrofitAPI: ApiService) : PagingSource<Int
         }
     }
 
+
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Items> {
-        val position = params.key ?: 1
-        lateinit var getData: LoadResult<Int, Items>
+        val page = params.key ?: 1
 
-        var response1 = retrofitAPI.getEmgMedData(
-            BuildConfig.PUBLIC_APIKEY,
-            position,
-            "json"
-        )
-        var response2 = retrofitAPI.getTitleData(
-            BuildConfig.PUBLIC_APIKEY,
-            position,
-            "json",
-            SearchActivity.query
-        )
+        return try {
+            val response = retrofitAPI.getEmgMedData(
+                BuildConfig.PUBLIC_APIKEY,
+                page,
+                "json"
+            )
 
+            val body = response.response.body
+            val items = body.items
+            val totalCount = body.totalCount.toInt()
+            val numOfRows = body.numOfRows.toInt()
 
-        try {
-            if (SearchActivity.Filter == 0) {
-                getData = LoadResult.Page(
-                    data = response1.response.body.items,
-                    prevKey = if (position == 1) null else position - 1,
-                    nextKey = if (position == 2299) null else position + 1
-                )
-            } else if (SearchActivity.Filter == 1) {
-                SearchActivity.Filter = 0
-                getData = LoadResult.Page(
-                    data = response2.response.body.items,
-                    prevKey = if (position == 1) null else position - 1,
-                    nextKey = if (position == (response2.response.body.totalCount.toInt() / response2.response.body.numOfRows.toInt()) + 1) null else position + 1
-                )
+            when (SearchActivity.FILTER) {
+                "SHOW_ALL" -> {
+                    val totalPages = totalCount / numOfRows + if (totalCount % numOfRows != 0) 1 else 0
+                    val prevKey = if (page == 1) null else page - 1
+                    val nextKey = if (page == totalPages) null else page + 1
+                    LoadResult.Page(data = items, prevKey = prevKey, nextKey = nextKey)
+                }
+
+                "SEARCH" -> {
+                    val filteredItems = items.filter { item ->
+                        item.lctreNm.contains(SearchActivity.inputTitle ?: "", ignoreCase = true)
+                    }
+                    LoadResult.Page(data = filteredItems, prevKey = null, nextKey = null)
+                }
+                else -> LoadResult.Error(IllegalArgumentException("Invalid filter"))
             }
-            return getData
         } catch (exception: IOException) {
-            // 네트워크 연결 자체를 실패한 경우 처리
             Log.d("데이터", "네트워크")
-            return LoadResult.Error(exception)
+            LoadResult.Error(exception)
         } catch (exception: HttpException) {
-            // http 통신중 http 오류코드(400, 403..)를 통한 처리
             Log.d("데이터", "HTTP")
-            return LoadResult.Error(exception)
+            LoadResult.Error(exception)
         } catch (e: NullPointerException) {
             Log.d("데이터", "데이터없음")
-            return LoadResult.Error(e)
+            LoadResult.Error(e)
         }
     }
-
-
-
-
-
 }
-
-
-

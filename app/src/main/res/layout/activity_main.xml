@@ -78,29 +78,16 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <TextView
-            android:id="@+id/search_textview"
-            android:layout_width="98dp"
-            android:layout_height="31dp"
-            android:text="검색"
-            android:textColor="#000000"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="@+id/search_image"
-            app:layout_constraintEnd_toEndOf="@+id/search_image"
-            app:layout_constraintHorizontal_bias="0.265"
-            app:layout_constraintStart_toStartOf="@+id/search_image"
-            app:layout_constraintTop_toTopOf="@+id/search_image"
-            app:layout_constraintVertical_bias="0.37" />
-
         <ImageView
             android:id="@+id/search_glass"
             android:layout_width="31dp"
             android:layout_height="28dp"
+            android:layout_marginEnd="16dp"
             android:src="@drawable/magnifyingglass"
             app:layout_constraintBottom_toBottomOf="@+id/search_image"
-            app:layout_constraintEnd_toStartOf="@+id/search_textview"
-            app:layout_constraintStart_toStartOf="@+id/search_image"
-            app:layout_constraintTop_toTopOf="@+id/search_image" />
+            app:layout_constraintEnd_toEndOf="@+id/search_image"
+            app:layout_constraintTop_toTopOf="@+id/search_image"
+            app:layout_constraintVertical_bias="0.566" />
 
         <TextView
             android:id="@+id/word"

@@ -9,8 +9,7 @@ import android.net.Uri
 import android.util.Log
 import androidx.annotation.UiThread
 import androidx.fragment.app.FragmentActivity
-
-
+import yonghun.ksg.lifelonglearningapp.BuildConfig
 import com.gun0912.tedpermission.provider.TedPermissionProvider.context
 import com.naver.maps.geometry.LatLng
 import com.naver.maps.map.*

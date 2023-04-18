@@ -35,19 +35,17 @@
 
         <androidx.appcompat.widget.SearchView
             android:id="@+id/search_view"
-            android:layout_width="324dp"
-            android:layout_height="57dp"
+            android:layout_width="329dp"
+            android:layout_height="55dp"
             android:layout_marginEnd="32dp"
             android:inputType="text"
             app:iconifiedByDefault="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.52"
+            app:layout_constraintVertical_bias="0.513"
             app:queryBackground="@drawable/main_search"
-            app:queryHint=" ex)영어회화"
-
-            />
+            app:queryHint=" ex)영어회화" />
 
         <View
             android:id="@+id/view"
@@ -99,8 +97,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="284dp"
-            android:text="데이터가 없습니다"
             android:textSize="22sp"
+            android:text="에러입니다."
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.484"
             app:layout_constraintStart_toStartOf="parent"
